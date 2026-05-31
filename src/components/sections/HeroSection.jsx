@@ -314,7 +314,7 @@ export default function HeroSection() {
           </div>
           <span className="text-[10px] font-bold text-text-muted tracking-widest uppercase">
             <span className="text-neon-cyan mr-2">Serving:</span>
-            {INDUSTRIES.join(' · ')}
+            {INDUSTRIES.map(i => i.label).join(' · ')}
           </span>
         </motion.div>
 

@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
 
           {/* Right: Feature cards */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {WHY_CHOOSE_US.map((item, idx) => {
                 const Icon = item.icon;
                 return (
@@ -92,7 +92,6 @@ export default function WhyChooseUs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-30px' }}
                     transition={{ delay: idx * 0.1, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-                    className={idx === 4 ? 'sm:col-span-2 sm:max-w-sm sm:mx-auto w-full' : ''}
                   >
                     <div
                       className="group p-6 rounded-2xl h-full transition-all duration-400 cursor-default"
