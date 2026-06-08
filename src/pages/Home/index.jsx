@@ -1,9 +1,12 @@
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import HeroSection from '../../components/sections/HeroSection';
+import SocialProof from '../../components/sections/SocialProof';
 import ServicesSection from '../../components/sections/ServicesSection';
-import WhyChooseUs from '../../components/sections/WhyChooseUs';
-import IndustriesSection from '../../components/sections/IndustriesSection';
-import VisionSection from '../../components/sections/VisionSection';
+import ProcessSection from '../../components/sections/ProcessSection';
+import CaseStudies from '../../components/sections/CaseStudies';
+import Testimonials from '../../components/sections/Testimonials';
+import FAQSection from '../../components/sections/FAQSection';
+import CTASection from '../../components/sections/CTASection';
 import ContactSection from '../../components/sections/ContactSection';
 
 // ── Main Home Page ─────────────────────────────────────────────────────────────
@@ -14,26 +17,33 @@ export default function Home() {
   );
 
   return (
-    <div className="bg-cyber-dark">
-
-      {/* ── 1. HERO (background + animated canvas) ──────────────────── */}
+    <div className="bg-bg-primary">
+      {/* 1. Hero Section */}
       <HeroSection />
 
-      {/* ── 2. SERVICES ─────────────────────────────────────────────── */}
+      {/* 2. Social Proof / Trusted By */}
+      <SocialProof />
+
+      {/* 3. Services (Bento Grid) */}
       <ServicesSection />
 
-      {/* ── 3. WHY CHOOSE US ────────────────────────────────────────── */}
-      <WhyChooseUs />
+      {/* 4. Process (4-step timeline) */}
+      <ProcessSection />
 
-      {/* ── 4. INDUSTRIES WE SERVE ──────────────────────────────────── */}
-      <IndustriesSection />
+      {/* 5. Case Studies */}
+      <CaseStudies />
 
-      {/* ── 5. VISION STATEMENT ─────────────────────────────────────── */}
-      <VisionSection />
+      {/* 6. Testimonials */}
+      <Testimonials />
 
-      {/* ── 6. CONTACT & ASSESSMENT ──────────────────────────────────── */}
+      {/* 7. FAQ */}
+      <FAQSection />
+
+      {/* 8. CTA Section */}
+      <CTASection />
+
+      {/* 9. Contact */}
       <ContactSection />
-
     </div>
   );
 }

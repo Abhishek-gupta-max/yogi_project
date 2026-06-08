@@ -9,6 +9,12 @@ import {
   BsArrowRight,
 } from 'react-icons/bs';
 import { CONTACT_INFO, OFFICE_LOCATIONS } from '../../constants';
+import Section from '../layout/Section';
+import Container from '../layout/Container';
+import Input from '../ui/Input';
+import Button from '../ui/Button';
+import Badge from '../ui/Badge';
+import Card from '../ui/Card';
 
 const SERVICES_LIST = [
   'Cybersecurity Solutions',
@@ -31,103 +37,70 @@ export default function ContactSection() {
     await new Promise((res) => setTimeout(res, 1200));
     console.log('Form submitted:', data);
     toast.success('Thank you! We will be in touch shortly.', {
-      style: { background: '#0E2138', color: '#F0F6FF', border: '1px solid rgba(0, 212, 255, 0.3)' },
+      style: { background: '#1A1A24', color: '#F5F5F7', border: '1px solid #2A2A3A' },
     });
     reset();
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden" style={{ background: '#06121F' }}>
-      {/* Background dot grid */}
-      <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Centered CTA Assessment Band */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative rounded-3xl p-12 md:p-16 text-center overflow-hidden mb-20 border border-cyber-border"
-          style={{
-            background: 'linear-gradient(120deg, #072136, #0A2647)',
-          }}
-        >
-          {/* Glow overlay */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_100%_at_50%_0%,rgba(0,212,255,0.14),transparent)] pointer-events-none" />
-
-          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary font-display mb-6 relative">
-            Ready to Secure Your Business?
-          </h2>
-          <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto mb-8 font-light relative leading-relaxed">
-            Contact VeltrixSecure today for a FREE IT Security Assessment and discover how we can transform your technology into your greatest competitive advantage.
-          </p>
-          <a href="#contact-form" className="btn-primary text-base px-8 py-4 rounded-2xl relative inline-flex items-center gap-2">
-            Claim Your Free Assessment
-            <BsArrowRight className="w-4 h-4" />
-          </a>
-        </motion.div>
-
-        {/* Contact Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start" id="contact-form">
+    <Section id="contact" background="primary">
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           {/* Left Info Column */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="section-label mb-4"
-              >
-                <span className="w-8 h-[1px] bg-neon-cyan block" />
-                Get In Touch
-              </motion.div>
-              <h3 className="text-2xl md:text-3xl font-black text-text-primary font-display mb-4">
-                Have Questions? Reach Out
-              </h3>
-              <p className="text-text-muted text-base font-light leading-relaxed">
+              <Badge variant="primary" className="mb-4">Get In Touch</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-text-primary mb-6">
+                Have questions?<br />Reach out.
+              </h2>
+              <p className="text-lg text-text-secondary leading-relaxed font-normal">
                 Have a question or ready to start? Reach out and our team will respond within one business day.
               </p>
             </div>
 
             <div className="flex flex-col gap-4">
               {/* Email */}
-              <a href={`mailto:${CONTACT_INFO.email}`} className="group flex items-start gap-4 p-5 rounded-2xl border border-cyber-border bg-cyber-card/40 transition-all hover:border-neon-cyan duration-300">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-neon-cyan/10 border border-neon-cyan/20 flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <BsEnvelopeFill className="w-4 h-4 text-neon-cyan" />
+              <a
+                href={`mailto:${CONTACT_INFO.email}`}
+                className="group flex items-start gap-4 p-5 rounded-2xl border border-border-primary bg-bg-secondary/40 transition-all hover:border-accent-primary/40 duration-300"
+              >
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-accent-primary/10 border border-accent-primary/20 flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <BsEnvelopeFill className="w-4 h-4 text-accent-primary" />
                 </div>
                 <div>
-                  <div className="text-xs text-text-dim uppercase tracking-wider font-bold mb-1">Email</div>
-                  <div className="text-sm text-text-secondary group-hover:text-neon-cyan transition-colors">{CONTACT_INFO.email}</div>
+                  <div className="text-xs text-text-tertiary uppercase tracking-wider font-bold mb-1">Email</div>
+                  <div className="text-sm text-text-secondary group-hover:text-text-primary transition-colors">{CONTACT_INFO.email}</div>
                 </div>
               </a>
 
               {/* Phone */}
-              <a href={`tel:${CONTACT_INFO.phone}`} className="group flex items-start gap-4 p-5 rounded-2xl border border-cyber-border bg-cyber-card/40 transition-all hover:border-neon-cyan duration-300">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-neon-cyan/10 border border-neon-cyan/20 flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <BsTelephoneFill className="w-4 h-4 text-neon-cyan" />
+              <a
+                href={`tel:${CONTACT_INFO.phone}`}
+                className="group flex items-start gap-4 p-5 rounded-2xl border border-border-primary bg-bg-secondary/40 transition-all hover:border-accent-primary/40 duration-300"
+              >
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-accent-primary/10 border border-accent-primary/20 flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <BsTelephoneFill className="w-4 h-4 text-accent-primary" />
                 </div>
                 <div>
-                  <div className="text-xs text-text-dim uppercase tracking-wider font-bold mb-1">Phone</div>
-                  <div className="text-sm text-text-secondary group-hover:text-neon-cyan transition-colors">{CONTACT_INFO.phone}</div>
+                  <div className="text-xs text-text-tertiary uppercase tracking-wider font-bold mb-1">Phone</div>
+                  <div className="text-sm text-text-secondary group-hover:text-text-primary transition-colors">{CONTACT_INFO.phone}</div>
                 </div>
               </a>
 
               {/* Location */}
-              <div className="flex items-start gap-4 p-5 rounded-2xl border border-cyber-border bg-cyber-card/40">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-neon-cyan/10 border border-neon-cyan/20 flex-shrink-0">
-                  <BsGeoAltFill className="w-4 h-4 text-neon-cyan" />
+              <div className="flex items-start gap-4 p-5 rounded-2xl border border-border-primary bg-bg-secondary/40">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-accent-primary/10 border border-accent-primary/20 flex-shrink-0">
+                  <BsGeoAltFill className="w-4 h-4 text-accent-primary" />
                 </div>
                 <div>
-                  <div className="text-xs text-text-dim uppercase tracking-wider font-bold mb-1">Location</div>
+                  <div className="text-xs text-text-tertiary uppercase tracking-wider font-bold mb-1">Location</div>
                   <div className="text-sm text-text-secondary leading-relaxed">{CONTACT_INFO.address}</div>
                 </div>
               </div>
             </div>
 
             {/* Office map */}
-            <div className="rounded-2xl overflow-hidden border border-cyber-border h-[200px]">
+            <div className="rounded-2xl overflow-hidden border border-border-primary h-[200px]">
               <iframe
                 src={OFFICE_LOCATIONS[0].mapUrl}
                 width="100%"
@@ -142,103 +115,101 @@ export default function ContactSection() {
           {/* Right Form Column */}
           <div className="lg:col-span-7">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative rounded-3xl p-8 md:p-12 border border-cyber-border bg-cyber-card/60 backdrop-blur-md"
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              {/* Form header */}
-              <div className="mb-8">
-                <h3 className="text-2xl font-black text-text-primary font-display mb-2">Send Us a Message</h3>
-                <p className="text-text-muted text-sm font-light">Fill out the form below and we will get back to you within 24 hours.</p>
-              </div>
+              <Card hoverEffect={false} className="p-8 md:p-12">
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold text-text-primary mb-2">Send Us a Message</h3>
+                  <p className="text-text-secondary text-sm">Fill out the form below and we will get back to you within 24 hours.</p>
+                </div>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  {/* Name */}
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold text-text-muted uppercase tracking-wider">Full Name *</label>
-                    <input
-                      {...register('name', { required: 'Name is required' })}
+                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {/* Name */}
+                    <Input
+                      label="Full Name *"
+                      id="name"
                       placeholder="Jane Smith"
-                      className="w-full px-4 py-3 rounded-xl text-sm text-text-primary bg-cyber-dark/40 placeholder-text-dim outline-none border border-cyber-border focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan/20 transition-all duration-300"
+                      error={errors.name?.message}
+                      register={register('name', { required: 'Name is required' })}
                     />
-                    {errors.name && <span className="text-xs text-red-400">{errors.name.message}</span>}
-                  </div>
 
-                  {/* Email */}
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold text-text-muted uppercase tracking-wider">Work Email *</label>
-                    <input
+                    {/* Email */}
+                    <Input
+                      label="Work Email *"
+                      id="email"
                       type="email"
-                      {...register('email', {
+                      placeholder="jane@company.com"
+                      error={errors.email?.message}
+                      register={register('email', {
                         required: 'Email is required',
                         pattern: { value: /^\S+@\S+\.\S+$/, message: 'Invalid email' },
                       })}
-                      placeholder="jane@company.com"
-                      className="w-full px-4 py-3 rounded-xl text-sm text-text-primary bg-cyber-dark/40 placeholder-text-dim outline-none border border-cyber-border focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan/20 transition-all duration-300"
                     />
-                    {errors.email && <span className="text-xs text-red-400">{errors.email.message}</span>}
                   </div>
-                </div>
 
-                {/* Company */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-bold text-text-muted uppercase tracking-wider">Company Name</label>
-                  <input
-                    {...register('company')}
+                  {/* Company */}
+                  <Input
+                    label="Company Name"
+                    id="company"
                     placeholder="Company name"
-                    className="w-full px-4 py-3 rounded-xl text-sm text-text-primary bg-cyber-dark/40 placeholder-text-dim outline-none border border-cyber-border focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan/20 transition-all duration-300"
+                    register={register('company')}
                   />
-                </div>
 
-                {/* Service */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-bold text-text-muted uppercase tracking-wider">How can we help? *</label>
-                  <select
-                    {...register('service', { required: 'Please select a topic' })}
-                    className="w-full px-4 py-3 rounded-xl text-sm text-text-secondary bg-cyber-dark/80 outline-none border border-cyber-border focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan/20 transition-all duration-300"
-                  >
-                    <option value="">Select a topic...</option>
-                    {SERVICES_LIST.map((s) => (
-                      <option key={s} value={s}>{s}</option>
-                    ))}
-                  </select>
-                  {errors.service && <span className="text-xs text-red-400">{errors.service.message}</span>}
-                </div>
+                  {/* Service */}
+                  <div className="flex flex-col gap-2 w-full">
+                    <label htmlFor="service" className="text-xs font-semibold tracking-wide text-text-secondary">
+                      How can we help? *
+                    </label>
+                    <select
+                      id="service"
+                      {...register('service', { required: 'Please select a topic' })}
+                      className="w-full bg-bg-secondary border border-border-primary rounded-xl px-4 py-3 text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-primary focus:ring-1 focus:ring-accent-primary transition-all duration-200"
+                    >
+                      <option value="">Select a topic...</option>
+                      {SERVICES_LIST.map((s) => (
+                        <option key={s} value={s}>{s}</option>
+                      ))}
+                    </select>
+                    {errors.service && <span className="text-xs text-error font-medium">{errors.service.message}</span>}
+                  </div>
 
-                {/* Message */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-bold text-text-muted uppercase tracking-wider">Message *</label>
-                  <textarea
+                  {/* Message */}
+                  <Input
+                    label="Message *"
+                    id="message"
+                    textarea={true}
                     rows={4}
-                    {...register('message', { required: 'Message is required' })}
                     placeholder="Tell us about your IT and security needs..."
-                    className="w-full px-4 py-3 rounded-xl text-sm text-text-primary bg-cyber-dark/40 placeholder-text-dim outline-none border border-cyber-border focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan/20 transition-all duration-300 resize-none"
+                    error={errors.message?.message}
+                    register={register('message', { required: 'Message is required' })}
                   />
-                  {errors.message && <span className="text-xs text-red-400">{errors.message.message}</span>}
-                </div>
 
-                {/* Submit */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="btn-primary py-4 text-base rounded-2xl disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                  {!isSubmitting && <BsArrowRight className="w-4 h-4" />}
-                </button>
+                  {/* Submit */}
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    size="lg"
+                    isLoading={isSubmitting}
+                    className="w-full group"
+                  >
+                    Send Message
+                    <BsArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
 
-                <p className="text-xs text-text-dim flex items-start gap-2 leading-relaxed">
-                  <BsShieldCheck className="w-3.5 h-3.5 text-neon-cyan flex-shrink-0 mt-0.5" />
-                  Your information is protected and will never be shared with third parties.
-                </p>
-              </form>
+                  <p className="text-xs text-text-tertiary flex items-start gap-2 leading-relaxed mt-2">
+                    <BsShieldCheck className="w-4 h-4 text-accent-primary flex-shrink-0" />
+                    Your information is protected and will never be shared with third parties.
+                  </p>
+                </form>
+              </Card>
             </motion.div>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

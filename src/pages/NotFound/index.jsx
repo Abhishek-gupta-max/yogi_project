@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import { BsArrowLeft, BsShieldExclamation } from 'react-icons/bs';
+import Button from '../../components/ui/Button';
 
 export default function NotFound() {
   useDocumentTitle(
@@ -10,55 +11,38 @@ export default function NotFound() {
   );
 
   return (
-    <section
-      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden px-6"
-      style={{ background: '#0A0A14' }}
-    >
-      {/* Background */}
-      <div className="absolute inset-0 cyber-grid opacity-25 pointer-events-none" />
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 50% 50% at 50% 40%, rgba(0,87,255,0.1) 0%, transparent 70%)',
-        }}
-      />
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden px-6 bg-bg-primary">
+      {/* Background radial spotlight */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-accent-primary/10 rounded-full blur-[100px]" />
+      </div>
 
       <div className="max-w-xl mx-auto text-center relative z-10 flex flex-col items-center gap-6">
         {/* Animated icon */}
         <motion.div
-          animate={{ y: [0, -12, 0] }}
+          animate={{ y: [0, -8, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          className="w-24 h-24 rounded-3xl flex items-center justify-center"
-          style={{
-            background: 'rgba(0, 87, 255, 0.08)',
-            border: '1px solid rgba(0, 87, 255, 0.3)',
-            boxShadow: '0 0 40px rgba(0, 87, 255, 0.15)',
-          }}
+          className="w-20 h-20 rounded-2xl flex items-center justify-center bg-accent-primary/10 border border-accent-primary/20 text-accent-primary shadow-premium"
         >
-          <BsShieldExclamation className="w-12 h-12 text-neon-cyan" />
+          <BsShieldExclamation className="w-10 h-10" />
         </motion.div>
 
         {/* 404 number */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
-          className="text-9xl font-black font-display select-none"
-          style={{
-            background: 'linear-gradient(135deg, #0050FF, #1A75FF)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
+          transition={{ duration: 0.5 }}
+          className="text-8xl font-bold tracking-tight text-text-primary select-none bg-gradient-to-r from-accent-primary to-indigo-400 bg-clip-text text-transparent"
         >
           404
         </motion.div>
 
         {/* Header */}
         <motion.h1
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-2xl sm:text-3xl font-black text-text-primary font-display"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary"
         >
           Access Node Offline
         </motion.h1>
@@ -68,29 +52,29 @@ export default function NotFound() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-text-muted text-base leading-relaxed max-w-sm font-light"
+          className="text-text-secondary text-sm sm:text-base leading-relaxed max-w-sm"
         >
           The page you&apos;re looking for doesn&apos;t exist, has been moved, or is temporarily offline.
         </motion.p>
 
         {/* Back button */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="pt-2 flex gap-4"
+          className="pt-2 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
         >
-          <Link to="/" id="notfound-home-btn">
-            <button className="btn-primary px-8 py-4 rounded-2xl">
-              <BsArrowLeft className="w-4 h-4" />
+          <Link to="/" id="notfound-home-btn" className="w-full sm:w-auto">
+            <Button variant="primary" size="md" className="w-full sm:w-auto group">
+              <BsArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
               Return to Homepage
-            </button>
+            </Button>
           </Link>
-          <Link to="/contact" id="notfound-contact-btn">
-            <button className="btn-outline px-8 py-4 rounded-2xl">
+          <a href="/#contact" id="notfound-contact-btn" className="w-full sm:w-auto">
+            <Button variant="outline" size="md" className="w-full sm:w-auto">
               Contact Us
-            </button>
-          </Link>
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>

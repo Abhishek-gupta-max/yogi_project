@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Resolve API base URL from Vite environment variables
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://api.shiftahead.tech/v1';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://api.veltrixsecure.com/v1';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -59,7 +59,7 @@ export const apiService = {
         setTimeout(() => {
           resolve({
             success: true,
-            message: 'Application received! Thank you for applying to Shift Ahead.',
+            message: 'Application received! Thank you for applying to VeltrixSecure.',
             data
           });
         }, 1500);
