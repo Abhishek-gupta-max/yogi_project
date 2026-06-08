@@ -9,8 +9,8 @@ export default function useDocumentTitle(title, description) {
   useEffect(() => {
     // 1. Update Title
     const formattedTitle = title 
-      ? `${title} | VeltrixSecure Technologies` 
-      : 'VeltrixSecure Technologies LLP | Cybersecurity & Managed IT Services';
+      ? `${title} | Shift Ahead Technologies` 
+      : 'Shift Ahead Technologies | Enterprise IT Services & Managed Solutions';
     document.title = formattedTitle;
 
     // 2. Update Meta Description
@@ -21,7 +21,7 @@ export default function useDocumentTitle(title, description) {
       document.head.appendChild(metaDescription);
     }
     
-    const fallbackDescription = description || 'VeltrixSecure Technologies LLP delivers intelligent cybersecurity, scalable technology solutions, cloud infrastructure, automation systems, and digital transformation services.';
+    const fallbackDescription = description || 'Shift Ahead Technologies provides state-of-the-art managed IT, telecom, automated DevOps, NOC surveillance, and AIOps predictive solutions globally.';
     metaDescription.setAttribute('content', fallbackDescription);
   }, [title, description]);
 }

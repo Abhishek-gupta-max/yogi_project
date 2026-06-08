@@ -23,10 +23,10 @@ import {
 export const NAV_LINKS = [
   { label: 'Home', path: '/#home' },
   { label: 'Services', path: '/#services' },
-  { label: 'How We Work', path: '/#process' },
-  { label: 'Case Studies', path: '/#case-studies' },
-  { label: 'FAQs', path: '/#faq' },
-  { label: 'Contact', path: '/#contact' },
+  { label: 'Why Us', path: '/#why' },
+  { label: 'Industries', path: '/#industries' },
+  { label: 'About', path: '/#about' },
+  { label: 'Contact Us', path: '/#contact' },
 ];
 
 export const SERVICES = [
@@ -137,27 +137,39 @@ export const WHY_CHOOSE_US = [
 export const PROCESS_STEPS = [
   {
     step: '01',
-    title: 'Discovery & Assessment',
-    desc: 'In-depth audit of your current systems, threat exposure, and core business parameters.',
+    title: 'Discovery',
+    desc: 'In-depth assessment of your infrastructure, threat landscape, and business objectives.',
     icon: BsGlobe2,
   },
   {
     step: '02',
-    title: 'Strategy & Architecture',
-    desc: 'Custom security-first blueprint and execution plan tailormade for your scaling needs.',
+    title: 'Strategy',
+    desc: 'Tailored technology roadmap and security architecture blueprint aligned to your goals.',
     icon: BsLayersHalf,
   },
   {
     step: '03',
-    title: 'Engineering & Integration',
-    desc: 'Implementation of zero-trust safeguards and DevOps pipelines with zero operational drag.',
+    title: 'Development',
+    desc: 'Agile implementation with security-by-design principles woven into every sprint.',
     icon: BsCode,
   },
   {
     step: '04',
-    title: 'Continuous Operations',
-    desc: '24/7/365 active SOC surveillance, compliance automation, and dedicated system support.',
+    title: 'Security Testing',
+    desc: 'Rigorous penetration testing, vulnerability scans, and compliance validation.',
     icon: BsShieldCheck,
+  },
+  {
+    step: '05',
+    title: 'Deployment',
+    desc: 'Zero-downtime deployment with automated rollback and real-time health monitoring.',
+    icon: BsCloudArrowUp,
+  },
+  {
+    step: '06',
+    title: 'Ongoing Support',
+    desc: '24/7 SOC monitoring, continuous improvement cycles, and dedicated account management.',
+    icon: BsHeadset,
   },
 ];
 
