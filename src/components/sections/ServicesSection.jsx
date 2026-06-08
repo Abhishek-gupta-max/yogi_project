@@ -72,7 +72,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-32 relative overflow-hidden"
+      className="py-24 relative overflow-hidden"
       style={{ background: '#06121F' }}
     >
       {/* Top divider */}
@@ -109,7 +109,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black text-text-primary leading-tight mb-5 font-display"
+            className="text-3xl md:text-4xl font-extrabold text-text-primary leading-tight mb-5 font-display"
           >
             End-to-End <span className="gradient-text">Technology</span> Expertise
           </motion.h2>
@@ -118,7 +118,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-text-muted text-lg leading-relaxed font-light"
+            className="text-text-muted text-base leading-relaxed font-light"
           >
             One partner. Complete coverage. From threat defense to cloud transformation, we handle it all so you don&apos;t have to juggle multiple vendors.
           </motion.p>

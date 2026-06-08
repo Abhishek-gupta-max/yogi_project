@@ -4,7 +4,7 @@ export default function VisionSection() {
   return (
     <section
       id="about"
-      className="py-32 relative overflow-hidden"
+      className="py-24 relative overflow-hidden"
       style={{ background: '#0A1A2E' }}
     >
       <div className="max-w-5xl mx-auto px-6 relative z-10">
@@ -26,7 +26,7 @@ export default function VisionSection() {
             Our Vision
           </div>
 
-          <p className="text-2xl md:text-3xl font-display font-semibold leading-relaxed text-text-primary">
+          <p className="text-xl md:text-2xl font-display font-semibold leading-relaxed text-text-primary">
             &ldquo;To be the most trusted cybersecurity and IT partner delivering secure, intelligent, and cost-effective technology solutions that give businesses the{' '}
             <span className="text-neon-cyan">confidence to grow without boundaries.</span>&rdquo;
           </p>

@@ -38,7 +38,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+        display: ['Montserrat', 'Inter', 'sans-serif'],
       },
       fontSize: {
         'display-xl': ['5rem', { lineHeight: '1.05', letterSpacing: '-0.03em' }],

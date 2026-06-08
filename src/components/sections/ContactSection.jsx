@@ -37,7 +37,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden" style={{ background: '#06121F' }}>
+    <section id="contact" className="py-24 relative overflow-hidden" style={{ background: '#06121F' }}>
       {/* Background dot grid */}
       <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
 
@@ -56,7 +56,7 @@ export default function ContactSection() {
           {/* Glow overlay */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_100%_at_50%_0%,rgba(0,212,255,0.14),transparent)] pointer-events-none" />
 
-          <h2 className="text-3xl md:text-5xl font-black text-text-primary font-display mb-6 relative">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary font-display mb-6 relative">
             Ready to Secure Your Business?
           </h2>
           <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto mb-8 font-light relative leading-relaxed">

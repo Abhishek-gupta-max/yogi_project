@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { BsArrowRight, BsShieldCheck, BsGlobe2, BsLightning } from 'react-icons/bs';
 import { INDUSTRIES } from '../../constants';
 
@@ -236,7 +235,7 @@ export default function HeroSection() {
       className="relative overflow-hidden flex items-center"
       style={{
         minHeight: '100vh',
-        background: 'linear-gradient(180deg, #050810 0%, #0A0A14 60%, #06060F 100%)',
+        background: 'linear-gradient(180deg, rgba(6, 18, 31, 0.85) 0%, rgba(6, 18, 31, 0.95) 100%), url("/cyber-bg.png") center/cover no-repeat fixed',
         paddingTop: '96px',
       }}
     >
@@ -296,13 +295,13 @@ export default function HeroSection() {
       />
 
       {/* ── Content ── */}
-      <div className="max-w-7xl mx-auto px-6 py-20 md:py-28 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-6 py-10 md:py-14 relative z-10 w-full">
         {/* Industries ticker */}
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full mb-10"
+          className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full mb-6"
           style={{
             background: 'rgba(0, 87, 255, 0.06)',
             border: '1px solid rgba(0, 87, 255, 0.2)',
@@ -326,7 +325,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
-              className="text-5xl sm:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] mb-8 font-display"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] mb-8 font-display"
             >
               Secure Digital{' '}
               <span className="block relative">
@@ -357,7 +356,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
-              className="text-text-muted text-lg md:text-xl leading-relaxed mb-10 max-w-2xl font-light"
+              className="text-text-muted text-base md:text-lg leading-relaxed mb-8 max-w-2xl font-light"
             >
               <strong className="text-text-secondary font-semibold">VeltrixSecure Technologies LLP</strong>{' '}
               delivers intelligent cybersecurity, scalable technology solutions, and digital transformation
@@ -368,21 +367,21 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
-              className="flex flex-wrap gap-4 mb-12"
+              className="flex flex-wrap gap-4 mb-8"
             >
-              <Link to="/contact" id="hero-get-started-btn">
+              <a href="#contact" id="hero-get-started-btn">
                 <button
                   className="btn-primary text-base px-8 py-4 rounded-2xl"
                 >
                   Get Started
                   <BsArrowRight className="w-4 h-4" />
                 </button>
-              </Link>
-              <Link to="/services" id="hero-explore-services-btn">
+              </a>
+              <a href="#services" id="hero-explore-services-btn">
                 <button className="btn-outline text-base px-8 py-4 rounded-2xl">
                   Explore Services
                 </button>
-              </Link>
+              </a>
             </motion.div>
 
             {/* Hero Stats Grid */}
@@ -390,7 +389,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
-              className="grid grid-cols-3 gap-6 pt-8 border-t border-cyber-border/40 mb-10 max-w-lg"
+              className="grid grid-cols-3 gap-6 pt-8 border-t border-cyber-border/40 mb-6 max-w-lg"
             >
               <div>
                 <div className="text-2xl sm:text-3xl font-black font-display text-text-primary">10+</div>

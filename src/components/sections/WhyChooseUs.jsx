@@ -6,7 +6,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why"
-      className="py-32 relative overflow-hidden"
+      className="py-24 relative overflow-hidden"
       style={{ background: '#0A1A2E' }}
     >
       {/* Background dot pattern */}
@@ -41,7 +41,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black text-text-primary leading-tight mb-5 font-display"
+            className="text-3xl md:text-4xl font-extrabold text-text-primary leading-tight mb-5 font-display"
           >
             A Partner You Can <span className="gradient-text">Trust</span>
           </motion.h2>
@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-text-muted text-lg leading-relaxed font-light"
+            className="text-text-muted text-base leading-relaxed font-light"
           >
             We don&apos;t just manage technology — we transform it into your greatest competitive advantage.
           </motion.p>

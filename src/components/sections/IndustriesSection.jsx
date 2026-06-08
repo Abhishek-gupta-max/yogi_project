@@ -4,7 +4,7 @@ export default function IndustriesSection() {
   return (
     <section
       id="industries"
-      className="py-32 relative overflow-hidden"
+      className="py-24 relative overflow-hidden"
       style={{ background: '#06121F' }}
     >
       {/* Top divider */}
@@ -33,7 +33,7 @@ export default function IndustriesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black text-text-primary font-display leading-tight mb-5"
+            className="text-3xl md:text-4xl font-extrabold text-text-primary font-display leading-tight mb-5"
           >
             Trusted Across <span className="gradient-text">Sectors</span>
           </motion.h2>
@@ -43,7 +43,7 @@ export default function IndustriesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-text-muted text-lg font-light max-w-2xl mx-auto"
+            className="text-text-muted text-base font-light max-w-2xl mx-auto"
           >
             Secure, scalable technology solutions tailored to the unique needs of every industry.
           </motion.p>
