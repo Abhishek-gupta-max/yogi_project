@@ -1,7 +1,6 @@
 import {
   BsShieldCheck,
   BsCloudArrowUp,
-  BsLightning,
   BsGlobe2,
   BsCode,
   BsLayersHalf,
@@ -9,10 +8,6 @@ import {
   BsBuildingGear,
   BsGraphUp,
   BsHeadset,
-  BsPeopleFill,
-  BsGrid,
-  BsWrench,
-  BsPhone,
   BsPatchCheckFill,
   BsAward,
   BsSliders,
@@ -26,125 +21,62 @@ import {
 
 // ─── NAVIGATION ────────────────────────────────────────────────────────────────
 export const NAV_LINKS = [
-  { label: 'Home', path: '/' },
-  {
-    label: 'About',
-    path: '/about',
-    dropdown: [
-      { label: 'Our Mission & Vision', path: '/about' },
-      { label: 'Why VeltrixSecure', path: '/about' },
-      { label: 'Leadership & Expertise', path: '/about' },
-      { label: 'Career & Opportunities', path: '/careers' },
-    ],
-  },
-  {
-    label: 'Services',
-    path: '/services',
-    dropdown: [
-      { label: 'Cybersecurity Solutions', path: '/services?tab=cybersecurity' },
-      { label: 'Managed Services', path: '/services?tab=managed-services' },
-      { label: 'Cloud Solutions', path: '/services?tab=cloud-solutions' },
-      { label: 'Backup & Recovery', path: '/services?tab=backup-recovery' },
-      { label: 'IT Consulting', path: '/services?tab=it-consulting' },
-      { label: 'Operations Management', path: '/services?tab=operations-management' },
-      { label: 'End-to-End Support', path: '/services?tab=end-to-end-support' },
-    ],
-  },
-  {
-    label: 'Case Studies',
-    path: '/case-studies',
-    dropdown: [
-      { label: 'Enterprise Security Hardening', path: '/case-studies' },
-      { label: 'Cloud Migration & Optimization', path: '/case-studies' },
-      { label: 'Automation-Driven Efficiency', path: '/case-studies' },
-      { label: 'Zero-Trust Implementation', path: '/case-studies' },
-      { label: 'Digital Transformation Project', path: '/case-studies' },
-    ],
-  },
-  { label: 'Blogs', path: '/blogs' },
-  { label: 'Contact Us', path: '/contact' },
+  { label: 'Home', path: '/#home' },
+  { label: 'Services', path: '/#services' },
+  { label: 'Why Us', path: '/#why' },
+  { label: 'Industries', path: '/#industries' },
+  { label: 'About', path: '/#about' },
+  { label: 'Contact Us', path: '/#contact' },
 ];
 
 export const SERVICES = [
   {
     id: 'cybersecurity',
-    title: 'Cybersecurity Services',
-    shortDesc: 'Threat detection, vulnerability management, compliance audits, and incident response.',
-    longDesc: 'Provide advanced cybersecurity and compliance-driven solutions. We secure every business layer with threat detection, vulnerability management, compliance audits, and incident response.',
+    title: 'Cybersecurity Solutions',
+    shortDesc: 'Advanced threat detection, vulnerability management, penetration testing, compliance audits, and incident response to defend your business against evolving cyber threats.',
+    longDesc: 'Advanced threat detection, vulnerability management, penetration testing, compliance audits, and incident response to defend your business against evolving cyber threats.',
     icon: BsShieldCheck,
-    features: ['Threat Detection', 'Vulnerability Management', 'Compliance Audits', 'Incident Response'],
+    features: ['Threat Detection', 'Vulnerability Management', 'Penetration Testing', 'Compliance Audits', 'Incident Response'],
   },
   {
-    id: 'microsoft-365',
-    title: 'Microsoft 365 Solutions',
-    shortDesc: 'Full M365 deployment, migration, licensing, security hardening, and end-user enablement.',
-    longDesc: 'Unlock the full potential of Microsoft 365 — from deployment and migration to licensing optimisation, security hardening, and ongoing end-user enablement.',
-    icon: BsGrid,
-    features: ['M365 Deployment', 'Migration', 'Security Hardening', 'Licensing'],
-  },
-  {
-    id: 'azure-cloud',
-    title: 'Azure & Cloud Services',
-    shortDesc: 'Secure cloud migration, hybrid cloud architecture, and disaster recovery on Azure.',
-    longDesc: 'Optimise costs and maximise technology investments through cloud adoption. We handle secure Azure migrations, hybrid cloud setups, and disaster recovery planning.',
-    icon: BsCloudArrowUp,
-    features: ['Azure Migration', 'Hybrid Cloud', 'Disaster Recovery', 'Cloud Optimisation'],
-  },
-  {
-    id: 'managed-it',
-    title: 'Managed IT Services',
-    shortDesc: '24×7 monitoring, patching, backup, and full infrastructure management.',
-    longDesc: 'Maximise technology investments through managed services. We provide 24×7 monitoring, patching, proactive backup, and comprehensive infrastructure management.',
+    id: 'managed-services',
+    title: 'Managed Services',
+    shortDesc: '24×7 infrastructure monitoring, proactive patching, backup management, and performance optimization — so problems are solved before they become crises.',
+    longDesc: '24×7 infrastructure monitoring, proactive patching, backup management, and performance optimization — so problems are solved before they become crises.',
     icon: BsBuildingGear,
-    features: ['24×7 Monitoring', 'System Patching', 'Backup Management', 'Infrastructure Management'],
+    features: ['24×7 Monitoring', 'Infrastructure Management', 'Proactive Patching', 'Performance Optimization', 'Backup Management'],
   },
   {
-    id: 'it-outsourcing',
-    title: 'IT Outsourcing',
-    shortDesc: 'Dedicated remote IT teams, helpdesk support, and end-to-end IT function management.',
-    longDesc: 'Extend your IT capacity without the overhead. Our outsourcing model provides dedicated remote teams, helpdesk support, and complete IT function management.',
-    icon: BsPeopleFill,
-    features: ['Dedicated Teams', 'Remote Helpdesk', 'IT Function Management', 'Cost Reduction'],
-  },
-  {
-    id: 'amc',
-    title: 'Annual Maintenance Contracts (AMC)',
-    shortDesc: 'Scheduled maintenance, preventive servicing, and priority SLA support for your IT assets.',
-    longDesc: 'Keep your IT infrastructure in peak condition with structured AMC plans — covering scheduled maintenance, preventive servicing, and priority SLA-backed support.',
-    icon: BsWrench,
-    features: ['Scheduled Maintenance', 'Preventive Servicing', 'Priority SLA', 'Asset Management'],
+    id: 'cloud-solutions',
+    title: 'Cloud Solutions',
+    shortDesc: 'Secure cloud migration, hybrid and multi-cloud architecture, Azure infrastructure design, and cloud-native disaster recovery built for scale and resilience.',
+    longDesc: 'Secure cloud migration, hybrid and multi-cloud architecture, Azure infrastructure design, and cloud-native disaster recovery built for scale and resilience.',
+    icon: BsCloudArrowUp,
+    features: ['Cloud Migration', 'Hybrid & Multi-Cloud', 'Azure Infrastructure', 'Disaster Recovery', 'Scalable Architecture'],
   },
   {
     id: 'backup-recovery',
-    title: 'Backup & Disaster Recovery',
-    shortDesc: 'Automated backups, business continuity planning, and secure data protection.',
-    longDesc: 'Ensure uninterrupted business operations. We provide automated backups, rigorous business continuity testing, and robust data protection to guarantee continuity.',
+    title: 'Backup & Recovery',
+    shortDesc: 'Automated backups, business continuity planning, data protection frameworks, and rapid restoration strategies to minimize downtime and protect critical assets.',
+    longDesc: 'Automated backups, business continuity planning, data protection frameworks, and rapid restoration strategies to minimize downtime and protect critical assets.',
     icon: BsDatabase,
-    features: ['Automated Backups', 'Business Continuity', 'Data Protection', 'Rapid Recovery'],
-  },
-  {
-    id: 'website-dev',
-    title: 'Website Development',
-    shortDesc: 'Custom, high-performance websites built for speed, security, and conversions.',
-    longDesc: 'From landing pages to enterprise portals, we craft fast, secure, and visually stunning websites tailored to your brand and business objectives.',
-    icon: BsCode,
-    features: ['Custom Design', 'Performance Optimisation', 'SEO Ready', 'CMS Integration'],
-  },
-  {
-    id: 'app-dev',
-    title: 'Application Development',
-    shortDesc: 'Scalable web and mobile applications built with modern, secure technology stacks.',
-    longDesc: 'We build robust, scalable applications across web and mobile — from MVPs to enterprise-grade platforms — with security and performance at the core.',
-    icon: BsPhone,
-    features: ['Web Applications', 'Mobile Apps', 'API Development', 'DevSecOps'],
+    features: ['Automated Backups', 'Business Continuity', 'Data Protection', 'Rapid Restoration', 'Continuity Planning'],
   },
   {
     id: 'it-consulting',
     title: 'IT Consulting',
-    shortDesc: 'Strategic IT strategy, risk assessment, compliance, and technology roadmapping.',
-    longDesc: 'To be your most trusted IT partner, we offer comprehensive IT consulting including strategy development, risk assessment, compliance readiness, and technology roadmaps.',
+    shortDesc: 'Strategic technology roadmaps, risk assessments, compliance planning, and technology investment guidance tailored to your business goals.',
+    longDesc: 'Strategic technology roadmaps, risk assessments, compliance planning, and technology investment guidance tailored to your business goals.',
     icon: BsLayersHalf,
-    features: ['IT Strategy', 'Risk Assessment', 'Compliance Planning', 'Technology Roadmap'],
+    features: ['Technology Roadmaps', 'Risk Assessments', 'Compliance Planning', 'Investment Guidance', 'Strategic Planning'],
+  },
+  {
+    id: 'operations-management',
+    title: 'Operations Management',
+    shortDesc: 'SLA-driven IT operations, streamlined processes, performance optimization, and end-to-end infrastructure lifecycle management.',
+    longDesc: 'SLA-driven IT operations, streamlined processes, performance optimization, and end-to-end infrastructure lifecycle management.',
+    icon: BsGear,
+    features: ['SLA-Driven Operations', 'Process Streamlining', 'Performance Optimization', 'Infrastructure Lifecycle'],
   },
 ];
 
@@ -159,43 +91,43 @@ export const STATS = [
 export const WHY_CHOOSE_US = [
   {
     icon: BsPatchCheckFill,
-    title: 'Microsoft & Azure Certified Professionals',
-    desc: 'Our team holds official Microsoft and Azure certifications, ensuring your solutions meet industry-leading standards.',
+    title: 'Microsoft & Azure Certified',
+    desc: 'Certified experts with 10+ years across cybersecurity, cloud, infrastructure, and enterprise IT — proven expertise, not just promises.',
     color: 'from-electric-DEFAULT/20 to-electric-DEFAULT/5',
     borderColor: 'rgba(0, 87, 255, 0.4)',
   },
   {
-    icon: BsAward,
-    title: '10+ Years of Industry Experience',
-    desc: 'A decade of hands-on delivery across cybersecurity, cloud, and managed IT gives us an unmatched depth of expertise.',
+    icon: BsHeadset,
+    title: '24×7 Monitoring & Response',
+    desc: 'We never sleep so your business never stops. Round-the-clock monitoring and lightning-fast incident response.',
     color: 'from-neon-cyan/20 to-neon-cyan/5',
     borderColor: 'rgba(0, 229, 255, 0.4)',
   },
   {
-    icon: BsHeadset,
-    title: '24×7 Support & Monitoring',
-    desc: 'Round-the-clock SOC monitoring and helpdesk support so your business is always protected and productive.',
+    icon: BsShieldCheck,
+    title: 'Security-First, Always',
+    desc: 'Every solution starts with security at its core — compliance, risk mitigation, and threat defense built into everything we do.',
     color: 'from-neon-purple/20 to-neon-purple/5',
     borderColor: 'rgba(123, 97, 255, 0.4)',
   },
   {
-    icon: BsShieldCheck,
-    title: 'Security-First Approach',
-    desc: 'Every solution we design is built with zero-trust principles and security embedded at every layer.',
+    icon: BsSliders,
+    title: 'Maximize Your ROI',
+    desc: 'We eliminate waste, optimize cloud spend, automate processes, and modernize infrastructure for maximum business value.',
     color: 'from-neon-green/20 to-neon-green/5',
     borderColor: 'rgba(0, 255, 179, 0.4)',
   },
   {
-    icon: BsSliders,
-    title: 'Flexible Engagement Models',
-    desc: 'Project-based, retainer, or fully managed — we adapt to your budget and business model seamlessly.',
+    icon: BsAward,
+    title: 'Tailored, Not Templated',
+    desc: 'We understand your business, risk profile, and growth ambitions — then build solutions that fit you.',
     color: 'from-neon-blue/20 to-neon-blue/5',
     borderColor: 'rgba(0, 180, 255, 0.4)',
   },
   {
-    icon: BsGlobe2,
-    title: 'Global Remote Service Delivery',
-    desc: 'We deliver enterprise-grade IT services remotely to clients across India and around the world.',
+    icon: BsDatabase,
+    title: 'Built for Continuity',
+    desc: 'Reliable backup, disaster recovery, and continuity solutions that keep your critical operations running.',
     color: 'from-electric-DEFAULT/20 to-electric-DEFAULT/5',
     borderColor: 'rgba(0, 87, 255, 0.35)',
   },
@@ -315,7 +247,7 @@ export const CASE_STUDIES = [
 export const TESTIMONIALS = [
   {
     quote:
-      'DEVELTRIXSECURE transformed our entire security posture in under 4 months. The zero-trust implementation was flawless and our compliance team is thrilled with the SOC 2 automation.',
+      'VeltrixSecure transformed our entire security posture in under 4 months. The zero-trust implementation was flawless and our compliance team is thrilled with the SOC 2 automation.',
     author: 'Rajesh Menon',
     role: 'CISO, Global FinTech Corp',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80',
@@ -339,12 +271,12 @@ export const TESTIMONIALS = [
 // ─── FAQS ─────────────────────────────────────────────────────────────────────
 export const FAQS = [
   {
-    question: 'What industries does DEVELTRIXSECURE TECHNOLOGIES LLP serve?',
+    question: 'What industries does VeltrixSecure Technologies LLP serve?',
     answer:
       'We serve enterprises across FinTech, Healthcare, Government, Manufacturing, E-Commerce, Banking, and Telecommunications. Our cybersecurity and IT solutions are tailored to the unique compliance and operational requirements of each sector — including HIPAA, PCI DSS, ISO 27001, SOC 2, and GDPR.',
   },
   {
-    question: 'Where is DEVELTRIXSECURE TECHNOLOGIES LLP located?',
+    question: 'Where is VeltrixSecure Technologies LLP located?',
     answer:
       'Our registered office is at W-159, Ground Floor, Sector 12, Gautam Buddha Nagar, Noida, Uttar Pradesh, India – 201301. We operate remotely and on-site across India and serve international clients globally.',
   },
@@ -356,10 +288,10 @@ export const FAQS = [
   {
     question: 'What certifications and compliance frameworks do you support?',
     answer:
-      'DEVELTRIXSECURE supports a wide range of compliance frameworks including ISO 27001, SOC 2 Type I & II, GDPR, HIPAA, PCI DSS, NIST 800-53, and NIST 800-207 (Zero Trust). Our team holds 50+ individual security certifications including CISSP, CISM, CEH, and AWS Security Specialty.',
+      'VeltrixSecure supports a wide range of compliance frameworks including ISO 27001, SOC 2 Type I & II, GDPR, HIPAA, PCI DSS, NIST 800-53, and NIST 800-207 (Zero Trust). Our team holds 50+ individual security certifications including CISSP, CISM, CEH, and AWS Security Specialty.',
   },
   {
-    question: 'How quickly can DEVELTRIXSECURE onboard and begin delivering?',
+    question: 'How quickly can VeltrixSecure onboard and begin delivering?',
     answer:
       'Typical onboarding takes 5–10 business days depending on project scope. For urgent security incidents or penetration testing, we can mobilize within 24–48 hours. Our agile delivery model ensures you see measurable results within the first 30 days of engagement.',
   },
@@ -470,10 +402,10 @@ export const OFFICE_LOCATIONS = [
 
 // ─── SOCIAL LINKS ─────────────────────────────────────────────────────────────
 export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/company/develtrixsecure',
-  twitter: 'https://twitter.com/develtrixsecure',
-  github: 'https://github.com/develtrixsecure',
-  facebook: 'https://facebook.com/develtrixsecure',
+  linkedin: 'https://linkedin.com/company/veltrixsecure',
+  twitter: 'https://twitter.com/veltrixsecure',
+  github: 'https://github.com/veltrixsecure',
+  facebook: 'https://facebook.com/veltrixsecure',
 };
 
 // ─── CONTACT INFO ─────────────────────────────────────────────────────────────
@@ -489,12 +421,12 @@ export const CONTACT_INFO = {
 
 // ─── INDUSTRIES SERVED ────────────────────────────────────────────────────────
 export const INDUSTRIES = [
-  { label: 'Healthcare',         icon: BsHospital,   color: 'rgba(0, 229, 255, 0.4)',   glow: 'rgba(0, 229, 255, 0.12)' },
-  { label: 'Education',          icon: BsBook,       color: 'rgba(123, 97, 255, 0.4)',  glow: 'rgba(123, 97, 255, 0.12)' },
-  { label: 'Manufacturing',      icon: BsGear,       color: 'rgba(0, 255, 179, 0.4)',   glow: 'rgba(0, 255, 179, 0.1)' },
-  { label: 'Financial Services', icon: BsCashStack,  color: 'rgba(0, 87, 255, 0.4)',    glow: 'rgba(0, 87, 255, 0.15)' },
-  { label: 'Retail & E-Commerce',icon: BsCartFill,   color: 'rgba(0, 180, 255, 0.4)',   glow: 'rgba(0, 180, 255, 0.12)' },
-  { label: 'Startups & SMEs',    icon: BsLightbulb,  color: 'rgba(255, 193, 7, 0.4)',   glow: 'rgba(255, 193, 7, 0.1)' },
+  { label: 'Healthcare & Life Sciences', icon: BsHospital, color: 'rgba(0, 229, 255, 0.4)', glow: 'rgba(0, 229, 255, 0.12)' },
+  { label: 'Financial Services', icon: BsCashStack, color: 'rgba(0, 87, 255, 0.4)', glow: 'rgba(0, 87, 255, 0.15)' },
+  { label: 'Manufacturing & Logistics', icon: BsGear, color: 'rgba(0, 255, 179, 0.4)', glow: 'rgba(0, 255, 179, 0.1)' },
+  { label: 'Retail & E-Commerce', icon: BsCartFill, color: 'rgba(0, 180, 255, 0.4)', glow: 'rgba(0, 180, 255, 0.12)' },
+  { label: 'Professional Services', icon: BsLightbulb, color: 'rgba(255, 193, 7, 0.4)', glow: 'rgba(255, 193, 7, 0.1)' },
+  { label: 'Small & Mid-Sized Business', icon: BsBook, color: 'rgba(123, 97, 255, 0.4)', glow: 'rgba(123, 97, 255, 0.12)' },
 ];
 
 // ─── TRUSTED LOGOS (placeholder names) ───────────────────────────────────────

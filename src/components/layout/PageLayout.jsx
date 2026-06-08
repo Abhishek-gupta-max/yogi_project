@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import Navbar from '../common/Navbar';
 import Footer from '../common/Footer';
 import ScrollToTop from '../common/ScrollToTop';
@@ -45,14 +46,14 @@ function CustomCursor() {
           ringRef.current.style.width = '48px';
           ringRef.current.style.height = '48px';
           ringRef.current.style.opacity = '0.6';
-          ringRef.current.style.borderColor = 'rgba(0, 87, 255, 0.7)';
+          ringRef.current.style.borderColor = 'rgba(0, 212, 255, 0.7)';
         }
       } else {
         if (ringRef.current) {
           ringRef.current.style.width = '32px';
           ringRef.current.style.height = '32px';
           ringRef.current.style.opacity = '1';
-          ringRef.current.style.borderColor = 'rgba(0, 229, 255, 0.4)';
+          ringRef.current.style.borderColor = 'rgba(0, 212, 255, 0.4)';
         }
       }
     };
@@ -93,10 +94,25 @@ function ScrollProgressBar() {
 
 // ── Page Layout ──────────────────────────────────────────────────────────────
 export default function PageLayout({ children }) {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location]);
+
   return (
     <div
       className="min-h-screen flex flex-col text-text-primary"
-      style={{ background: '#0A0A14', cursor: 'none' }}
+      style={{ background: '#06121F', cursor: 'none' }}
     >
       {/* Scroll Progress Indicator */}
       <ScrollProgressBar />

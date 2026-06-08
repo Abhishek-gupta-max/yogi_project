@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
-import { CONTACT_INFO } from '../../constants';
 
 export default function TermsOfService() {
-  useDocumentTitle('Terms of Service | DEVELTRIXSECURE', 'Terms of Service for DEVELTRIXSECURE TECHNOLOGIES LLP.');
+  useDocumentTitle('Terms of Service | VeltrixSecure', 'Terms of Service for VeltrixSecure Technologies LLP.');
 
   return (
     <div style={{ background: '#0A0A14' }}>
@@ -48,28 +47,28 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-xl font-bold text-text-primary mb-4 font-display">2. Use License</h2>
               <p className="mb-3">
-                Permission is granted to temporarily download one copy of the materials (information or software) on DEVELTRIXSECURE TECHNOLOGIES LLP's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+                Permission is granted to temporarily download one copy of the materials (information or software) on VeltrixSecure Technologies LLP&apos;s website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
               </p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>Modify or copy the materials;</li>
                 <li>Use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
-                <li>Attempt to decompile or reverse engineer any software contained on DEVELTRIXSECURE's website;</li>
+                <li>Attempt to decompile or reverse engineer any software contained on VeltrixSecure&apos;s website;</li>
                 <li>Remove any copyright or other proprietary notations from the materials; or</li>
-                <li>Transfer the materials to another person or "mirror" the materials on any other server.</li>
+                <li>Transfer the materials to another person or &ldquo;mirror&rdquo; the materials on any other server.</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-xl font-bold text-text-primary mb-4 font-display">3. Disclaimer</h2>
               <p>
-                The materials on DEVELTRIXSECURE TECHNOLOGIES LLP's website are provided on an 'as is' basis. DEVELTRIXSECURE makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+                The materials on VeltrixSecure Technologies LLP&apos;s website are provided on an &apos;as is&apos; basis. VeltrixSecure makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-bold text-text-primary mb-4 font-display">4. Limitations</h2>
               <p>
-                In no event shall DEVELTRIXSECURE TECHNOLOGIES LLP or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on DEVELTRIXSECURE's website, even if DEVELTRIXSECURE or a DEVELTRIXSECURE authorized representative has been notified orally or in writing of the possibility of such damage.
+                In no event shall VeltrixSecure Technologies LLP or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on VeltrixSecure&apos;s website, even if VeltrixSecure or a VeltrixSecure authorized representative has been notified orally or in writing of the possibility of such damage.
               </p>
             </section>
             

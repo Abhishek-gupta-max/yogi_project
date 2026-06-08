@@ -32,7 +32,7 @@ export const apiService = {
     // Simulation fallback if real endpoint is unreachable
     try {
       return await apiClient.post('/contact', data);
-    } catch (err) {
+    } catch {
       // Return a simulated response with delay for local development/showcase
       return new Promise((resolve) => {
         setTimeout(() => {
@@ -54,7 +54,7 @@ export const apiService = {
   submitJobApplication: async (data) => {
     try {
       return await apiClient.post('/careers/apply', data);
-    } catch (err) {
+    } catch {
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve({

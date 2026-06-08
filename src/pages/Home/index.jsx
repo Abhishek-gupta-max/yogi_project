@@ -3,16 +3,18 @@ import HeroSection from '../../components/sections/HeroSection';
 import ServicesSection from '../../components/sections/ServicesSection';
 import WhyChooseUs from '../../components/sections/WhyChooseUs';
 import IndustriesSection from '../../components/sections/IndustriesSection';
+import VisionSection from '../../components/sections/VisionSection';
+import ContactSection from '../../components/sections/ContactSection';
 
 // ── Main Home Page ─────────────────────────────────────────────────────────────
 export default function Home() {
   useDocumentTitle(
-    'DEVELTRIXSECURE TECHNOLOGIES LLP | Cybersecurity & IT Solutions',
-    'DEVELTRIXSECURE TECHNOLOGIES LLP delivers intelligent cybersecurity, scalable technology solutions, and digital transformation services for modern businesses in Noida, India.'
+    'VeltrixSecure Technologies LLP | Cybersecurity & IT Solutions',
+    'VeltrixSecure Technologies LLP delivers intelligent cybersecurity, scalable technology solutions, and digital transformation services for modern businesses.'
   );
 
   return (
-    <div style={{ background: '#0A0A14' }}>
+    <div className="bg-cyber-dark">
 
       {/* ── 1. HERO (background + animated canvas) ──────────────────── */}
       <HeroSection />
@@ -25,6 +27,12 @@ export default function Home() {
 
       {/* ── 4. INDUSTRIES WE SERVE ──────────────────────────────────── */}
       <IndustriesSection />
+
+      {/* ── 5. VISION STATEMENT ─────────────────────────────────────── */}
+      <VisionSection />
+
+      {/* ── 6. CONTACT & ASSESSMENT ──────────────────────────────────── */}
+      <ContactSection />
 
     </div>
   );

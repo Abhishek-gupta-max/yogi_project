@@ -231,6 +231,7 @@ export default function HeroSection() {
 
   return (
     <section
+      id="home"
       ref={containerRef}
       className="relative overflow-hidden flex items-center"
       style={{
@@ -358,7 +359,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
               className="text-text-muted text-lg md:text-xl leading-relaxed mb-10 max-w-2xl font-light"
             >
-              <strong className="text-text-secondary font-semibold">DEVELTRIXSECURE TECHNOLOGIES LLP</strong>{' '}
+              <strong className="text-text-secondary font-semibold">VeltrixSecure Technologies LLP</strong>{' '}
               delivers intelligent cybersecurity, scalable technology solutions, and digital transformation
               services for modern businesses.
             </motion.p>
@@ -382,6 +383,27 @@ export default function HeroSection() {
                   Explore Services
                 </button>
               </Link>
+            </motion.div>
+
+            {/* Hero Stats Grid */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
+              className="grid grid-cols-3 gap-6 pt-8 border-t border-cyber-border/40 mb-10 max-w-lg"
+            >
+              <div>
+                <div className="text-2xl sm:text-3xl font-black font-display text-text-primary">10+</div>
+                <div className="text-[10px] text-text-muted mt-1 leading-snug tracking-wider uppercase font-bold">Years of Expertise</div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-black font-display text-text-primary">24×7</div>
+                <div className="text-[10px] text-text-muted mt-1 leading-snug tracking-wider uppercase font-bold">Monitoring & Support</div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-black font-display text-text-primary">100%</div>
+                <div className="text-[10px] text-text-muted mt-1 leading-snug tracking-wider uppercase font-bold">Security-First</div>
+              </div>
             </motion.div>
 
             {/* Trust Badges */}

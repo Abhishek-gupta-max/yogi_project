@@ -5,8 +5,8 @@ import { BsArrowLeft, BsShieldExclamation } from 'react-icons/bs';
 
 export default function NotFound() {
   useDocumentTitle(
-    '404 — Page Not Found | DEVELTRIXSECURE',
-    'The page you are looking for does not exist. Return to DEVELTRIXSECURE TECHNOLOGIES LLP homepage.'
+    '404 — Page Not Found | VeltrixSecure',
+    'The page you are looking for does not exist. Return to VeltrixSecure Technologies LLP homepage.'
   );
 
   return (
@@ -70,7 +70,7 @@ export default function NotFound() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-text-muted text-base leading-relaxed max-w-sm font-light"
         >
-          The page you're looking for doesn't exist, has been moved, or is temporarily offline.
+          The page you&apos;re looking for doesn&apos;t exist, has been moved, or is temporarily offline.
         </motion.p>
 
         {/* Back button */}

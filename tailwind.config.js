@@ -7,25 +7,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        // ── DEVELTRIXSECURE Brand Palette ──────────────────────────────
+        // ── VeltrixSecure Brand Palette ──────────────────────────────
         cyber: {
           black:    '#050810',   // Ultra deep black
-          dark:     '#0A0A14',   // Main background
-          darker:   '#06060F',   // Darkest bg
-          card:     '#0D1117',   // Card background
-          surface:  '#111827',   // Elevated surface
-          border:   '#1A2035',   // Subtle border
-          muted:    '#242B3D',   // Muted border
+          dark:     '#06121F',   // Veltrix Navy Main background
+          darker:   '#050E18',   // Darker navy
+          card:     '#0E2138',   // Card background
+          surface:  '#0A1A2E',   // Elevated surface
+          border:   '#1B3A5C',   // Subtle border
+          muted:    '#1B3A5C',   // Muted border
         },
         electric: {
-          DEFAULT:  '#0050FF',   // Primary Electric Blue
+          DEFAULT:  '#15498A',   // Primary Veltrix Blue (matching logo main blue)
           light:    '#3A7BFF',   // Light variant
-          dim:      '#0040BB',   // Dark variant
-          glow:     '#0050FF66', // Glow alpha
+          dim:      '#0D2847',   // Dark Veltrix Blue (matching logo dark blue)
+          glow:     'rgba(21, 73, 138, 0.4)', // Glow alpha
         },
         neon: {
-          cyan:     '#1A75FF',   // Accent Cyan
-          blue:     '#00B4FF',   // Secondary blue
+          cyan:     '#00D4FF',   // Bright Cyan (matching logo bright cyan)
+          blue:     '#7FE9FF',   // Soft Cyan (matching logo light cyan)
           purple:   '#7B61FF',   // Purple accent
           green:    '#00FFB3',   // Success green
         },
