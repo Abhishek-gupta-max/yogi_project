@@ -44,6 +44,14 @@ function ServiceCard({ service, index }) {
           }}
         />
 
+        {/* Card Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-[0.06] group-hover:opacity-[0.16] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.05] pointer-events-none z-0"
+          style={{
+            backgroundImage: `url("/services/${service.id}.png")`,
+          }}
+        />
+
         {/* Icon */}
         <div
           className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0 relative z-10 transition-all duration-400 group-hover:scale-110"

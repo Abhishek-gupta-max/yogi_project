@@ -223,7 +223,7 @@ export default function HeroSection() {
   }, []);
 
   const trustBadges = [
-    { icon: BsShieldCheck, text: 'ISO 27001 Certified' },
+    // { icon: BsShieldCheck, text: 'ISO 27001 Certified' },
     { icon: BsLightning, text: '24/7 SOC Operations' },
     { icon: BsGlobe2, text: 'Zero-Trust Architecture' },
   ];
@@ -325,7 +325,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] mb-8 font-display"
+              className="text-[2rem] leading-[1] font-extrabold tracking-tight mb-8 font-display"
             >
               Secure Digital{' '}
               <span className="block relative">
@@ -358,7 +358,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
               className="text-text-muted text-base md:text-lg leading-relaxed mb-8 max-w-2xl font-light"
             >
-              <strong className="text-text-secondary font-semibold">VeltrixSecure Technologies LLP</strong>{' '}
+              <strong className="text-text-secondary font-semibold">VeltrixSecure Technologies</strong>{' '}
               delivers intelligent cybersecurity, scalable technology solutions, and digital transformation
               services for modern businesses.
             </motion.p>
