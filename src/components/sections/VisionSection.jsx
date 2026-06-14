@@ -4,7 +4,7 @@ export default function VisionSection() {
   return (
     <section
       id="about"
-      className="py-24 relative overflow-hidden"
+      className="py-16 relative overflow-hidden"
       style={{ background: '#0A1A2E' }}
     >
       <div className="max-w-5xl mx-auto px-6 relative z-10">

@@ -4,7 +4,7 @@ export default function IndustriesSection() {
   return (
     <section
       id="industries"
-      className="py-24 relative overflow-hidden"
+      className="py-16 relative overflow-hidden"
       style={{ background: '#06121F' }}
     >
       {/* Top divider */}

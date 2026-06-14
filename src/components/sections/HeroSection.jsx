@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { BsArrowRight, BsShieldCheck, BsGlobe2, BsLightning } from 'react-icons/bs';
+import { BsArrowRight, BsGlobe2, BsLightning } from 'react-icons/bs';
 import { INDUSTRIES } from '../../constants';
 
 // ── Animated Cyber-Grid Canvas ────────────────────────────────────────────

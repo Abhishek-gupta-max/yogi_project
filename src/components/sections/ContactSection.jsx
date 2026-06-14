@@ -37,7 +37,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden" style={{ background: '#06121F' }}>
+    <section id="contact" className="py-16 relative overflow-hidden" style={{ background: '#06121F' }}>
       {/* Background dot grid */}
       <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
 
@@ -48,7 +48,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative rounded-3xl p-12 md:p-16 text-center overflow-hidden mb-20 border border-cyber-border"
+          className="relative rounded-3xl p-12 md:p-16 text-center overflow-hidden mb-12 border border-cyber-border"
           style={{
             background: 'linear-gradient(120deg, #072136, #0A2647)',
           }}
@@ -90,6 +90,23 @@ export default function ContactSection() {
                 Have a question or ready to start? Reach out and our team will respond within one business day.
               </p>
             </div>
+
+            {/* Support Technical Specialist Illustration */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative w-full rounded-3xl overflow-hidden border border-white/10 glass-card-premium p-2.5 bg-cyber-black/20 shadow-lg"
+            >
+              <img
+                src="/cyber_support.png"
+                alt="Cybersecurity Technical Support Specialist"
+                className="w-full h-44 object-cover rounded-2xl"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-neon-cyan/5 pointer-events-none" />
+            </motion.div>
 
             <div className="flex flex-col gap-4">
               {/* Email */}

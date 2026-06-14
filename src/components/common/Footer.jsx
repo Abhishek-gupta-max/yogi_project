@@ -17,23 +17,25 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    { label: 'Cybersecurity Solutions', path: '/#services' },
-    { label: 'Managed Services', path: '/#services' },
-    { label: 'Cloud Solutions', path: '/#services' },
-    { label: 'Backup & Recovery', path: '/#services' },
+    { label: 'Vulnerability Assessment', path: '/#services' },
+    { label: 'Penetration Testing', path: '/#services' },
+    { label: 'Cloud Security', path: '/#services' },
+    { label: 'Incident Response', path: '/#services' },
+    { label: 'Security Consulting', path: '/#services' },
+    { label: 'Security Training', path: '/#services' },
   ];
 
   const quickLinks = [
     { label: 'About Us', path: '/#about' },
     { label: 'Why Choose Us', path: '/#why' },
-    { label: 'Industries', path: '/#industries' },
-    { label: 'Contact', path: '/#contact' },
+    { label: 'Client Reviews', path: '/#testimonials' },
+    { label: 'Blog Insights', path: '/#blog' },
   ];
 
   return (
     <footer
       className="relative pt-20 pb-8 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #06060F 0%, #050810 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0B1120 0%, #050816 100%)' }}
     >
       {/* Top gradient divider */}
       <div className="gradient-divider absolute top-0 inset-x-0" />

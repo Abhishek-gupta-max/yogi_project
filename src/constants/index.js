@@ -402,7 +402,7 @@ export const OFFICE_LOCATIONS = [
 
 // ─── SOCIAL LINKS ─────────────────────────────────────────────────────────────
 export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/company/veltrixsecure',
+  linkedin: 'https://www.linkedin.com/company/veltrix-secure/',
   twitter: 'https://twitter.com/veltrixsecure',
   github: 'https://github.com/veltrixsecure',
   facebook: 'https://facebook.com/veltrixsecure',
