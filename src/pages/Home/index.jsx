@@ -13,8 +13,8 @@ import ContactSection from '../../components/sections/ContactSection';
 // ── Main Home Page ─────────────────────────────────────────────────────────────
 export default function Home() {
   useDocumentTitle(
-    'VeltrixSecure Technologies LLP | Cybersecurity & IT Solutions',
-    'VeltrixSecure Technologies LLP delivers intelligent cybersecurity, scalable technology solutions, and digital transformation services for modern businesses.'
+    'VeltrixSecure Technologies | Cybersecurity & IT Solutions',
+    'VeltrixSecure Technologies delivers intelligent cybersecurity, scalable technology solutions, and digital transformation services for modern businesses.'
   );
 
   return (

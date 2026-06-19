@@ -17,6 +17,7 @@ import {
   BsCashStack,
   BsCartFill,
   BsLightbulb,
+  BsWifi,
 } from 'react-icons/bs';
 
 // ─── NAVIGATION ────────────────────────────────────────────────────────────────
@@ -77,6 +78,14 @@ export const SERVICES = [
     longDesc: 'SLA-driven IT operations, streamlined processes, performance optimization, and end-to-end infrastructure lifecycle management.',
     icon: BsGear,
     features: ['SLA-Driven Operations', 'Process Streamlining', 'Performance Optimization', 'Infrastructure Lifecycle'],
+  },
+  {
+    id: 'networking-solutions',
+    title: 'Networking Solutions',
+    shortDesc: 'Design, deployment, and optimization of secure enterprise network architectures, SD-WAN, secure wireless access, and high-performance routing/switching infrastructure.',
+    longDesc: 'Design, deployment, and optimization of secure enterprise network architectures, SD-WAN, secure wireless access, and high-performance routing/switching infrastructure.',
+    icon: BsWifi,
+    features: ['Network Architecture', 'SD-WAN & VPNs', 'Wireless Security', 'Switching & Routing', 'Bandwidth Management'],
   },
 ];
 
@@ -271,12 +280,12 @@ export const TESTIMONIALS = [
 // ─── FAQS ─────────────────────────────────────────────────────────────────────
 export const FAQS = [
   {
-    question: 'What industries does VeltrixSecure Technologies LLP serve?',
+    question: 'What industries does VeltrixSecure Technologies serve?',
     answer:
       'We serve enterprises across FinTech, Healthcare, Government, Manufacturing, E-Commerce, Banking, and Telecommunications. Our cybersecurity and IT solutions are tailored to the unique compliance and operational requirements of each sector — including HIPAA, PCI DSS, ISO 27001, SOC 2, and GDPR.',
   },
   {
-    question: 'Where is VeltrixSecure Technologies LLP located?',
+    question: 'Where is VeltrixSecure Technologies located?',
     answer:
       'Our registered office is at W-159, Ground Floor, Sector 12, Gautam Buddha Nagar, Noida, Uttar Pradesh, India – 201301. We operate remotely and on-site across India and serve international clients globally.',
   },

@@ -132,10 +132,15 @@ export default function ServicesSection() {
           </motion.p>
         </div>
 
-        {/* Services Grid (3 columns on desktop) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Services Grid (3 columns on desktop, centered on wrap) */}
+        <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
           {SERVICES.map((service, idx) => (
-            <ServiceCard key={service.id} service={service} index={idx} />
+            <div
+              key={service.id}
+              className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0"
+            >
+              <ServiceCard service={service} index={idx} />
+            </div>
           ))}
         </div>
       </div>

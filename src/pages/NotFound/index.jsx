@@ -6,7 +6,7 @@ import { BsArrowLeft, BsShieldExclamation } from 'react-icons/bs';
 export default function NotFound() {
   useDocumentTitle(
     '404 — Page Not Found | VeltrixSecure',
-    'The page you are looking for does not exist. Return to VeltrixSecure Technologies LLP homepage.'
+    'The page you are looking for does not exist. Return to VeltrixSecure Technologies homepage.'
   );
 
   return (

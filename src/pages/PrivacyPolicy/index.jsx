@@ -3,7 +3,7 @@ import useDocumentTitle from '../../hooks/useDocumentTitle';
 import { CONTACT_INFO } from '../../constants';
 
 export default function PrivacyPolicy() {
-  useDocumentTitle('Privacy Policy | VeltrixSecure', 'Privacy Policy and data protection practices for VeltrixSecure Technologies LLP.');
+  useDocumentTitle('Privacy Policy | VeltrixSecure', 'Privacy Policy and data protection practices for VeltrixSecure Technologies.');
 
   return (
     <div style={{ background: '#0A0A14' }}>
@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-xl font-bold text-text-primary mb-4 font-display">1. Introduction</h2>
               <p>
-                VeltrixSecure Technologies LLP (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                VeltrixSecure Technologies (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
               </p>
             </section>
 
@@ -77,7 +77,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-xl font-bold text-text-primary mb-4 font-display">5. Contact Us</h2>
               <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
               <div className="mt-4 p-4 rounded-xl" style={{ background: 'rgba(0, 87, 255, 0.05)', border: '1px solid rgba(0, 87, 255, 0.15)' }}>
-                <p className="text-text-primary font-semibold">VeltrixSecure Technologies LLP</p>
+                <p className="text-text-primary font-semibold">VeltrixSecure Technologies</p>
                 <p>{CONTACT_INFO.address}</p>
                 <p>Email: <a href={`mailto:${CONTACT_INFO.email}`} className="text-neon-cyan hover:underline">{CONTACT_INFO.email}</a></p>
               </div>

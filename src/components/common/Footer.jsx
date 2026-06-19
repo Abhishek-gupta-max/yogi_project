@@ -251,7 +251,7 @@ export default function Footer() {
         >
           <p>
             © {currentYear}{' '}
-            <span className="text-text-muted">VELTRIXSECURE TECHNOLOGIES LLP.</span>{' '}
+            <span className="text-text-muted">VELTRIXSECURE TECHNOLOGIES.</span>{' '}
             All rights reserved.
           </p>
           <div className="flex items-center gap-6">
