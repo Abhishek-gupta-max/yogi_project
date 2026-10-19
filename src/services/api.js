@@ -3,6 +3,9 @@ import axios from 'axios';
 // Resolve API base URL from Vite environment variables
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://api.shiftahead.tech/v1';
 
+// Contact/email server. Empty = same origin (Vite dev proxy forwards /api to localhost:5000)
+const CONTACT_API_URL = import.meta.env.VITE_CONTACT_API_URL || '';
+
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   timeout: 10000,
@@ -29,20 +32,12 @@ export const apiService = {
    * @returns {Promise}
    */
   submitContactForm: async (data) => {
-    // Simulation fallback if real endpoint is unreachable
+    // Sent to the local email server (server/index.js), which saves to MySQL and emails the team
     try {
-      return await apiClient.post('/contact', data);
-    } catch {
-      // Return a simulated response with delay for local development/showcase
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve({
-            success: true,
-            message: 'Inquiry submitted successfully! Our systems engineers will contact you shortly.',
-            data
-          });
-        }, 1500);
-      });
+      const response = await axios.post(`${CONTACT_API_URL}/api/contact`, data, { timeout: 20000 });
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || 'Could not send your message. Please try again.');
     }
   },
 

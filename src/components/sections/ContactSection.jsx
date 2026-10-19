@@ -9,6 +9,7 @@ import {
   BsArrowRight,
 } from 'react-icons/bs';
 import { CONTACT_INFO, OFFICE_LOCATIONS } from '../../constants';
+import { apiService } from '../../services/api';
 
 const SERVICES_LIST = [
   'Cybersecurity Solutions',
@@ -28,12 +29,14 @@ export default function ContactSection() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    await new Promise((res) => setTimeout(res, 1200));
-    console.log('Form submitted:', data);
-    toast.success('Thank you! We will be in touch shortly.', {
-      style: { background: '#0E2138', color: '#F0F6FF', border: '1px solid rgba(0, 212, 255, 0.3)' },
-    });
-    reset();
+    const toastStyle = { background: '#0E2138', color: '#F0F6FF', border: '1px solid rgba(0, 212, 255, 0.3)' };
+    try {
+      const response = await apiService.submitContactForm(data);
+      toast.success(response.message || 'Thank you! We will be in touch shortly.', { style: toastStyle });
+      reset();
+    } catch (err) {
+      toast.error(err.message, { style: toastStyle });
+    }
   };
 
   return (
@@ -200,14 +203,30 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                {/* Company */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-bold text-text-muted uppercase tracking-wider">Company Name</label>
-                  <input
-                    {...register('company')}
-                    placeholder="Company name"
-                    className="w-full px-4 py-3 rounded-xl text-sm text-text-primary bg-cyber-dark/40 placeholder-text-dim outline-none border border-cyber-border focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan/20 transition-all duration-300"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {/* Phone */}
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs font-bold text-text-muted uppercase tracking-wider">Phone Number</label>
+                    <input
+                      type="tel"
+                      {...register('phone', {
+                        pattern: { value: /^[\d+\-\s()]{7,20}$/, message: 'Invalid phone number' },
+                      })}
+                      placeholder="+91 98765 43210"
+                      className="w-full px-4 py-3 rounded-xl text-sm text-text-primary bg-cyber-dark/40 placeholder-text-dim outline-none border border-cyber-border focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan/20 transition-all duration-300"
+                    />
+                    {errors.phone && <span className="text-xs text-red-400">{errors.phone.message}</span>}
+                  </div>
+
+                  {/* Company */}
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs font-bold text-text-muted uppercase tracking-wider">Company Name</label>
+                    <input
+                      {...register('company')}
+                      placeholder="Company name"
+                      className="w-full px-4 py-3 rounded-xl text-sm text-text-primary bg-cyber-dark/40 placeholder-text-dim outline-none border border-cyber-border focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan/20 transition-all duration-300"
+                    />
+                  </div>
                 </div>
 
                 {/* Service */}
