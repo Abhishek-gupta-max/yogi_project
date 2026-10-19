@@ -33,15 +33,10 @@ export default function ScrollToTop() {
           initial={{ opacity: 0, scale: 0.5, y: 50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.5, y: 50 }}
-          whileHover={{ scale: 1.1, backgroundColor: '#0066ff' }}
+          whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.9 }}
           aria-label="Scroll back to top"
-          className="fixed bottom-6 right-6 z-40 p-3 rounded-full text-white shadow-2xl backdrop-blur-md transition-all duration-200"
-          style={{
-            background: 'rgba(10, 10, 20, 0.9)',
-            border: '1px solid rgba(0, 87, 255, 0.4)',
-            boxShadow: '0 0 20px rgba(0, 87, 255, 0.3)',
-          }}
+          className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-brand hover:bg-brand-hover text-on-brand shadow-elevated border border-on-brand/10 transition-colors duration-200"
         >
           <BsArrowUpShort className="w-6 h-6" />
         </motion.button>

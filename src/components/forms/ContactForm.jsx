@@ -32,12 +32,6 @@ export default function ContactForm() {
         error: (err) => `Transmission failure: ${err.message || 'Please check your connection.'}`
       },
       {
-        style: {
-          minWidth: '250px',
-          background: '#112240',
-          color: '#f8fafc',
-          border: '1px solid #233554',
-        },
         success: {
           duration: 5000,
           icon: '🚀',
@@ -52,15 +46,15 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Name */}
         <div className="flex flex-col gap-2">
-          <label htmlFor="name" className="text-sm font-semibold tracking-wide text-slate-300">
+          <label htmlFor="name" className="text-sm font-semibold tracking-wide text-fg-2">
             Full Name *
           </label>
           <input
             id="name"
             type="text"
             placeholder="John Doe"
-            className={`w-full px-4 py-3 rounded-xl bg-navy-darkest border text-white text-sm focus:outline-none focus:border-brand-electric transition-colors ${
-              errors.name ? 'border-red-500/80 focus:border-red-500' : 'border-navy-slate/80'
+            className={`form-input ${
+              errors.name ? 'border-danger focus:border-danger' : ''
             }`}
             {...register('name', {
               required: 'Full name is required.',
@@ -68,21 +62,21 @@ export default function ContactForm() {
             })}
           />
           {errors.name && (
-            <span className="text-xs text-red-400 pl-1">{errors.name.message}</span>
+            <span className="text-xs text-danger pl-1">{errors.name.message}</span>
           )}
         </div>
 
         {/* Email */}
         <div className="flex flex-col gap-2">
-          <label htmlFor="email" className="text-sm font-semibold tracking-wide text-slate-300">
+          <label htmlFor="email" className="text-sm font-semibold tracking-wide text-fg-2">
             Work Email *
           </label>
           <input
             id="email"
             type="email"
             placeholder="john@company.com"
-            className={`w-full px-4 py-3 rounded-xl bg-navy-darkest border text-white text-sm focus:outline-none focus:border-brand-electric transition-colors ${
-              errors.email ? 'border-red-500/80 focus:border-red-500' : 'border-navy-slate/80'
+            className={`form-input ${
+              errors.email ? 'border-danger focus:border-danger' : ''
             }`}
             {...register('email', {
               required: 'Work email is required.',
@@ -93,7 +87,7 @@ export default function ContactForm() {
             })}
           />
           {errors.email && (
-            <span className="text-xs text-red-400 pl-1">{errors.email.message}</span>
+            <span className="text-xs text-danger pl-1">{errors.email.message}</span>
           )}
         </div>
       </div>
@@ -102,15 +96,15 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Phone */}
         <div className="flex flex-col gap-2">
-          <label htmlFor="phone" className="text-sm font-semibold tracking-wide text-slate-300">
+          <label htmlFor="phone" className="text-sm font-semibold tracking-wide text-fg-2">
             Phone Number
           </label>
           <input
             id="phone"
             type="tel"
             placeholder="+1 (555) 019-2834"
-            className={`w-full px-4 py-3 rounded-xl bg-navy-darkest border text-white text-sm focus:outline-none focus:border-brand-electric transition-colors ${
-              errors.phone ? 'border-red-500/80 focus:border-red-500' : 'border-navy-slate/80'
+            className={`form-input ${
+              errors.phone ? 'border-danger focus:border-danger' : ''
             }`}
             {...register('phone', {
               pattern: {
@@ -120,18 +114,18 @@ export default function ContactForm() {
             })}
           />
           {errors.phone && (
-            <span className="text-xs text-red-400 pl-1">{errors.phone.message}</span>
+            <span className="text-xs text-danger pl-1">{errors.phone.message}</span>
           )}
         </div>
 
         {/* Subject Select */}
         <div className="flex flex-col gap-2">
-          <label htmlFor="subject" className="text-sm font-semibold tracking-wide text-slate-300">
+          <label htmlFor="subject" className="text-sm font-semibold tracking-wide text-fg-2">
             Inquiry Area *
           </label>
           <select
             id="subject"
-            className="w-full px-4 py-3 rounded-xl bg-navy-darkest border border-navy-slate/80 text-white text-sm focus:outline-none focus:border-brand-electric transition-colors"
+            className="form-input"
             {...register('subject', { required: true })}
           >
             <option value="general">General Corporate Inquiry</option>
@@ -146,15 +140,15 @@ export default function ContactForm() {
 
       {/* Message */}
       <div className="flex flex-col gap-2">
-        <label htmlFor="message" className="text-sm font-semibold tracking-wide text-slate-300">
+        <label htmlFor="message" className="text-sm font-semibold tracking-wide text-fg-2">
           Your Message *
         </label>
         <textarea
           id="message"
           rows={5}
           placeholder="Briefly describe your systems requirement..."
-          className={`w-full px-4 py-3 rounded-xl bg-navy-darkest border text-white text-sm focus:outline-none focus:border-brand-electric transition-colors resize-none ${
-            errors.message ? 'border-red-500/80 focus:border-red-500' : 'border-navy-slate/80'
+          className={`form-input resize-none ${
+            errors.message ? 'border-danger focus:border-danger' : ''
           }`}
           {...register('message', {
             required: 'Please enter details regarding your query.',
@@ -162,7 +156,7 @@ export default function ContactForm() {
           })}
         />
         {errors.message && (
-          <span className="text-xs text-red-400 pl-1">{errors.message.message}</span>
+          <span className="text-xs text-danger pl-1">{errors.message.message}</span>
         )}
       </div>
 

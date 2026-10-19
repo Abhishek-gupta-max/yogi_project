@@ -40,22 +40,8 @@ function CustomCursor() {
     };
 
     const onMouseOver = (e) => {
-      const target = e.target;
-      if (target.closest('a, button, [role="button"], input, textarea, select')) {
-        if (ringRef.current) {
-          ringRef.current.style.width = '48px';
-          ringRef.current.style.height = '48px';
-          ringRef.current.style.opacity = '0.6';
-          ringRef.current.style.borderColor = 'rgba(0, 212, 255, 0.7)';
-        }
-      } else {
-        if (ringRef.current) {
-          ringRef.current.style.width = '32px';
-          ringRef.current.style.height = '32px';
-          ringRef.current.style.opacity = '1';
-          ringRef.current.style.borderColor = 'rgba(0, 212, 255, 0.4)';
-        }
-      }
+      const isInteractive = e.target.closest('a, button, [role="button"], input, textarea, select');
+      ringRef.current?.classList.toggle('is-active', Boolean(isInteractive));
     };
 
     window.addEventListener('mousemove', onMouseMove);
@@ -97,22 +83,28 @@ export default function PageLayout({ children }) {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.hash) {
-      const element = document.getElementById(location.hash.slice(1));
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
-    } else {
+    if (!location.hash) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
     }
+
+    // Coming from another page, the target section only exists after the lazy
+    // page loads and its transition finishes, so keep looking for a few seconds.
+    let attempts = 0;
+    const timer = setInterval(() => {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element || ++attempts > 40) {
+        clearInterval(timer);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+    return () => clearInterval(timer);
   }, [location]);
 
   return (
     <div
-      className="min-h-screen flex flex-col text-text-primary"
-      style={{ background: '#06121F', cursor: 'none' }}
+      className="min-h-screen flex flex-col text-fg bg-page"
+      style={{ cursor: 'none' }}
     >
       {/* Scroll Progress Indicator */}
       <ScrollProgressBar />

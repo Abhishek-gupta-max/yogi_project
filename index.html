@@ -2,37 +2,95 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ── SEO Tags ─────────────────────────────────────────────────── -->
+    <!-- ── Icons ────────────────────────────────────────────────────── -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#061020" />
+
+    <!-- ── SEO Tags (per-page values are updated by src/hooks/useDocumentTitle.js) ── -->
     <title>VeltrixSecure Technologies | Cybersecurity & IT Solutions</title>
-    <meta name="description" content="VeltrixSecure Technologies delivers intelligent cybersecurity, scalable technology solutions, cloud infrastructure, automation systems, and digital transformation services for modern enterprises." />
-    <meta name="keywords" content="Cybersecurity, Network Security, Cloud Infrastructure, IT Consulting, Digital Transformation, Automation, AI Integration, Web Development, App Development, IT Solutions, Noida" />
+    <meta name="description" content="VeltrixSecure Technologies in Noida delivers cybersecurity, managed IT, cloud, networking, web and application development, and MySQL database support for modern businesses." />
+    <meta name="keywords" content="Cybersecurity, Network Security, Managed IT Services, Cloud Solutions, Backup and Recovery, IT Consulting, Networking Solutions, Web Development, Application Development, Technical Support, MySQL Database Support, IT Company Noida" />
     <meta name="author" content="VeltrixSecure Technologies" />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://veltrixsecure.com/" />
 
     <!-- ── Open Graph ───────────────────────────────────────────────── -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VeltrixSecure Technologies" />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:url" content="https://veltrixsecure.com/" />
-    <meta property="og:title" content="VeltrixSecure Technologies | Secure. Transform. Excel." />
-    <meta property="og:description" content="We protect, optimize, and elevate every business we serve. Vision-driven IT Services & Consulting firm." />
-    <meta property="og:image" content="/logo.png" />
+    <meta property="og:title" content="VeltrixSecure Technologies | Cybersecurity & IT Solutions" />
+    <meta property="og:description" content="VeltrixSecure Technologies in Noida delivers cybersecurity, managed IT, cloud, networking, web and application development, and MySQL database support for modern businesses." />
+    <meta property="og:image" content="https://veltrixsecure.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="VeltrixSecure — Secure Digital Infrastructure for the Modern Future" />
 
     <!-- ── Twitter Card ──────────────────────────────────────────────── -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="VeltrixSecure Technologies | Secure. Transform. Excel." />
-    <meta name="twitter:description" content="We protect, optimize, and elevate every business we serve. Vision-driven IT Services & Consulting firm." />
+    <meta name="twitter:title" content="VeltrixSecure Technologies | Cybersecurity & IT Solutions" />
+    <meta name="twitter:description" content="VeltrixSecure Technologies in Noida delivers cybersecurity, managed IT, cloud, networking, web and application development, and MySQL database support for modern businesses." />
+    <meta name="twitter:image" content="https://veltrixsecure.com/og-image.jpg" />
+
+    <!-- ── Structured Data (Google rich results) ────────────────────── -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://veltrixsecure.com/#organization",
+        "name": "VeltrixSecure Technologies",
+        "url": "https://veltrixsecure.com/",
+        "logo": "https://veltrixsecure.com/apple-touch-icon.png",
+        "image": "https://veltrixsecure.com/og-image.jpg",
+        "description": "Cybersecurity, managed IT, cloud, networking, web and application development, and MySQL database support for modern businesses.",
+        "slogan": "Secure. Transform. Excel.",
+        "email": "info@veltrixsecure.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "W-159, Ground Floor, Sector 12",
+          "addressLocality": "Noida",
+          "addressRegion": "Uttar Pradesh",
+          "postalCode": "201301",
+          "addressCountry": "IN"
+        },
+        "areaServed": "IN",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "IT & Cybersecurity Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cybersecurity Solutions" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed Services" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud Solutions" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Backup & Recovery" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IT Consulting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Operations Management" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Networking Solutions" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Technical Support & Maintenance" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Application Development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "MySQL Database Support" } }
+          ]
+        }
+      }
+    </script>
 
     <!-- ── Performance: Font Preconnect ─────────────────────────────── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="/cyber_illustration.png" media="(min-width: 768px)" />
 
     <!-- ── Typography ───────────────────────────────────────────────── -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-cyber-dark text-text-primary antialiased overflow-x-hidden">
+  <body class="bg-page text-fg antialiased overflow-x-hidden">
     <div id="root"></div>
+    <noscript>
+      <h1>VeltrixSecure Technologies — Cybersecurity &amp; IT Solutions</h1>
+      <p>Cybersecurity, managed IT, cloud, networking, web and application development, and MySQL database support in Noida, India. Contact: info@veltrixsecure.com</p>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

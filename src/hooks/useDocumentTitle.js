@@ -1,27 +1,39 @@
 import { useEffect } from 'react';
+import { SITE } from '../constants';
+
+// Finds <meta name|property="..."> (or <link rel="...">) in <head>, creating it if missing
+function upsertHeadTag(tag, keyAttr, key, valueAttr, value) {
+  let el = document.head.querySelector(`${tag}[${keyAttr}="${key}"]`);
+  if (!el) {
+    el = document.createElement(tag);
+    el.setAttribute(keyAttr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute(valueAttr, value);
+}
 
 /**
- * Custom hook to dynamically manage the document title and meta description for SEO.
- * @param {string} title - The title of the page.
- * @param {string} description - The meta description of the page.
+ * Per-page SEO: title, meta description, canonical URL, Open Graph / Twitter tags and robots.
+ * @param {string} title - Full page title (shown as-is).
+ * @param {string} description - Meta description for the page.
+ * @param {{ noindex?: boolean }} [options] - noindex for pages that shouldn't appear in search (e.g. 404).
  */
-export default function useDocumentTitle(title, description) {
+export default function useDocumentTitle(title, description, { noindex = false } = {}) {
   useEffect(() => {
-    // 1. Update Title
-    const formattedTitle = title 
-      ? `${title} | Shift Ahead Technologies` 
-      : 'Shift Ahead Technologies | Enterprise IT Services & Managed Solutions';
-    document.title = formattedTitle;
+    const pageTitle = title || SITE.defaultTitle;
+    const pageDescription = description || SITE.defaultDescription;
+    const canonicalUrl = `${SITE.url}${window.location.pathname === '/' ? '/' : window.location.pathname}`;
 
-    // 2. Update Meta Description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    
-    const fallbackDescription = description || 'Shift Ahead Technologies provides state-of-the-art managed IT, telecom, automated DevOps, NOC surveillance, and AIOps predictive solutions globally.';
-    metaDescription.setAttribute('content', fallbackDescription);
-  }, [title, description]);
+    document.title = pageTitle;
+    upsertHeadTag('meta', 'name', 'description', 'content', pageDescription);
+    upsertHeadTag('meta', 'name', 'robots', 'content', noindex ? 'noindex, follow' : 'index, follow');
+    upsertHeadTag('link', 'rel', 'canonical', 'href', canonicalUrl);
+
+    upsertHeadTag('meta', 'property', 'og:title', 'content', pageTitle);
+    upsertHeadTag('meta', 'property', 'og:description', 'content', pageDescription);
+    upsertHeadTag('meta', 'property', 'og:url', 'content', canonicalUrl);
+    upsertHeadTag('meta', 'property', 'og:image', 'content', `${SITE.url}${SITE.ogImage}`);
+    upsertHeadTag('meta', 'name', 'twitter:title', 'content', pageTitle);
+    upsertHeadTag('meta', 'name', 'twitter:description', 'content', pageDescription);
+  }, [title, description, noindex]);
 }

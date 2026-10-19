@@ -18,6 +18,10 @@ import {
   BsCartFill,
   BsLightbulb,
   BsWifi,
+  BsWindowStack,
+  BsTools,
+  BsCodeSlash,
+  BsDatabaseGear,
 } from 'react-icons/bs';
 
 // ─── NAVIGATION ────────────────────────────────────────────────────────────────
@@ -87,6 +91,43 @@ export const SERVICES = [
     icon: BsWifi,
     features: ['Network Architecture', 'SD-WAN & VPNs', 'Wireless Security', 'Switching & Routing', 'Bandwidth Management'],
   },
+  // Services below have no /services/<id>.png artwork, so image is null
+  {
+    id: 'web-development',
+    title: 'Web Development',
+    shortDesc: 'Modern, responsive, and user-friendly websites with clean design, fast performance, and seamless functionality across every device.',
+    longDesc: 'We build modern, responsive, and user-friendly websites that help businesses establish a strong online presence. Our focus is on clean design, performance, and seamless functionality across all devices.',
+    icon: BsWindowStack,
+    image: null,
+    features: ['Responsive Design', 'Performance Optimization', 'Clean UI/UX', 'Cross-Device Compatibility'],
+  },
+  {
+    id: 'technical-support',
+    title: 'Technical Support & Maintenance',
+    shortDesc: 'Reliable technical support, troubleshooting, bug fixing, and ongoing maintenance to keep your websites and applications running smoothly.',
+    longDesc: 'We provide reliable technical support, troubleshooting, bug fixing, and ongoing maintenance to keep your websites and applications running smoothly.',
+    icon: BsTools,
+    image: null,
+    features: ['Troubleshooting', 'Bug Fixing', 'Ongoing Maintenance', 'Technical Support'],
+  },
+  {
+    id: 'application-development',
+    title: 'Application Development',
+    shortDesc: 'Custom web applications and business solutions that streamline workflows, improve productivity, and fit your exact requirements.',
+    longDesc: 'We develop customized web applications and business solutions that streamline workflows, improve productivity, and meet specific business requirements.',
+    icon: BsCodeSlash,
+    image: null,
+    features: ['Custom Web Apps', 'Business Solutions', 'Workflow Automation', 'Productivity Tools'],
+  },
+  {
+    id: 'mysql-database-support',
+    title: 'MySQL Database Support',
+    shortDesc: 'MySQL setup, query optimization, error troubleshooting, backup assistance, and performance tuning for reliable data management.',
+    longDesc: 'We provide MySQL database setup, query optimization, error troubleshooting, backup assistance, and performance improvement for reliable data management.',
+    icon: BsDatabaseGear,
+    image: null,
+    features: ['Database Setup', 'Query Optimization', 'Error Troubleshooting', 'Backup Assistance', 'Performance Tuning'],
+  },
 ];
 
 // ─── STATS ────────────────────────────────────────────────────────────────────
@@ -102,43 +143,43 @@ export const WHY_CHOOSE_US = [
     icon: BsPatchCheckFill,
     title: 'Microsoft & Azure Certified',
     desc: 'Certified experts with 10+ years across cybersecurity, cloud, infrastructure, and enterprise IT — proven expertise, not just promises.',
-    color: 'from-electric-DEFAULT/20 to-electric-DEFAULT/5',
-    borderColor: 'rgba(0, 87, 255, 0.4)',
+    color: 'from-brand/20 to-brand/5',
+    borderColor: 'rgb(var(--brand-light) / 0.4)',
   },
   {
     icon: BsHeadset,
     title: '24×7 Monitoring & Response',
     desc: 'We never sleep so your business never stops. Round-the-clock monitoring and lightning-fast incident response.',
-    color: 'from-neon-cyan/20 to-neon-cyan/5',
-    borderColor: 'rgba(0, 229, 255, 0.4)',
+    color: 'from-accent/20 to-accent/5',
+    borderColor: 'rgb(var(--accent) / 0.4)',
   },
   {
     icon: BsShieldCheck,
     title: 'Security-First, Always',
     desc: 'Every solution starts with security at its core — compliance, risk mitigation, and threat defense built into everything we do.',
-    color: 'from-neon-purple/20 to-neon-purple/5',
-    borderColor: 'rgba(123, 97, 255, 0.4)',
+    color: 'from-brand-light/20 to-brand-light/5',
+    borderColor: 'rgb(var(--brand-light) / 0.4)',
   },
   {
     icon: BsSliders,
     title: 'Maximize Your ROI',
     desc: 'We eliminate waste, optimize cloud spend, automate processes, and modernize infrastructure for maximum business value.',
-    color: 'from-neon-green/20 to-neon-green/5',
-    borderColor: 'rgba(0, 255, 179, 0.4)',
+    color: 'from-success/20 to-success/5',
+    borderColor: 'rgb(var(--success) / 0.4)',
   },
   {
     icon: BsAward,
     title: 'Tailored, Not Templated',
     desc: 'We understand your business, risk profile, and growth ambitions — then build solutions that fit you.',
-    color: 'from-neon-blue/20 to-neon-blue/5',
-    borderColor: 'rgba(0, 180, 255, 0.4)',
+    color: 'from-accent-soft/20 to-accent-soft/5',
+    borderColor: 'rgb(var(--accent) / 0.4)',
   },
   {
     icon: BsDatabase,
     title: 'Built for Continuity',
     desc: 'Reliable backup, disaster recovery, and continuity solutions that keep your critical operations running.',
-    color: 'from-electric-DEFAULT/20 to-electric-DEFAULT/5',
-    borderColor: 'rgba(0, 87, 255, 0.35)',
+    color: 'from-brand/20 to-brand/5',
+    borderColor: 'rgb(var(--brand-light) / 0.35)',
   },
 ];
 
@@ -193,7 +234,7 @@ export const CASE_STUDIES = [
     metric: '78%',
     metricLabel: 'Security Incidents Reduced',
     tag: 'Cybersecurity',
-    color: 'from-electric-DEFAULT/30 to-transparent',
+    color: 'from-brand/30 to-transparent',
   },
   {
     id: 'cloud-migration',
@@ -204,7 +245,7 @@ export const CASE_STUDIES = [
     metric: '99.97%',
     metricLabel: 'System Availability',
     tag: 'Cloud Infrastructure',
-    color: 'from-neon-cyan/20 to-transparent',
+    color: 'from-accent/20 to-transparent',
   },
   {
     id: 'automation-efficiency',
@@ -215,7 +256,7 @@ export const CASE_STUDIES = [
     metric: '65%',
     metricLabel: 'Operations Automated',
     tag: 'Automation',
-    color: 'from-neon-purple/20 to-transparent',
+    color: 'from-brand-light/20 to-transparent',
   },
   {
     id: 'zero-trust',
@@ -226,7 +267,7 @@ export const CASE_STUDIES = [
     metric: '100%',
     metricLabel: 'NIST Compliance Achieved',
     tag: 'Network Security',
-    color: 'from-neon-green/20 to-transparent',
+    color: 'from-success/20 to-transparent',
   },
   {
     id: 'digital-transformation',
@@ -237,7 +278,7 @@ export const CASE_STUDIES = [
     metric: '3.2x',
     metricLabel: 'Platform Performance Gain',
     tag: 'Digital Transformation',
-    color: 'from-neon-blue/20 to-transparent',
+    color: 'from-accent-soft/20 to-transparent',
   },
   {
     id: 'ai-threat-detection',
@@ -248,7 +289,7 @@ export const CASE_STUDIES = [
     metric: '99.6%',
     metricLabel: 'Fraud Detection Accuracy',
     tag: 'AI Integration',
-    color: 'from-electric-DEFAULT/20 to-transparent',
+    color: 'from-brand/20 to-transparent',
   },
 ];
 
@@ -418,6 +459,16 @@ export const SOCIAL_LINKS = {
 };
 
 // ─── CONTACT INFO ─────────────────────────────────────────────────────────────
+// ─── SEO ──────────────────────────────────────────────────────────────────────
+// Keep in sync with the static tags in index.html, public/robots.txt and public/sitemap.xml
+export const SITE = {
+  name: 'VeltrixSecure Technologies',
+  url: 'https://veltrixsecure.com',
+  defaultTitle: 'VeltrixSecure Technologies | Cybersecurity & IT Solutions',
+  defaultDescription: 'VeltrixSecure Technologies delivers intelligent cybersecurity, scalable technology solutions, and digital transformation services for modern businesses.',
+  ogImage: '/og-image.jpg',
+};
+
 export const CONTACT_INFO = {
   email: 'info@veltrixsecure.com',
   phone: '+91 120 000 0000',
@@ -430,12 +481,12 @@ export const CONTACT_INFO = {
 
 // ─── INDUSTRIES SERVED ────────────────────────────────────────────────────────
 export const INDUSTRIES = [
-  { label: 'Healthcare & Life Sciences', icon: BsHospital, color: 'rgba(0, 229, 255, 0.4)', glow: 'rgba(0, 229, 255, 0.12)' },
-  { label: 'Financial Services', icon: BsCashStack, color: 'rgba(0, 87, 255, 0.4)', glow: 'rgba(0, 87, 255, 0.15)' },
-  { label: 'Manufacturing & Logistics', icon: BsGear, color: 'rgba(0, 255, 179, 0.4)', glow: 'rgba(0, 255, 179, 0.1)' },
-  { label: 'Retail & E-Commerce', icon: BsCartFill, color: 'rgba(0, 180, 255, 0.4)', glow: 'rgba(0, 180, 255, 0.12)' },
-  { label: 'Professional Services', icon: BsLightbulb, color: 'rgba(255, 193, 7, 0.4)', glow: 'rgba(255, 193, 7, 0.1)' },
-  { label: 'Small & Mid-Sized Business', icon: BsBook, color: 'rgba(123, 97, 255, 0.4)', glow: 'rgba(123, 97, 255, 0.12)' },
+  { label: 'Healthcare & Life Sciences', icon: BsHospital, color: 'rgb(var(--accent) / 0.4)', glow: 'rgb(var(--accent) / 0.12)' },
+  { label: 'Financial Services', icon: BsCashStack, color: 'rgb(var(--brand-light) / 0.4)', glow: 'rgb(var(--brand-light) / 0.15)' },
+  { label: 'Manufacturing & Logistics', icon: BsGear, color: 'rgb(var(--success) / 0.4)', glow: 'rgb(var(--success) / 0.1)' },
+  { label: 'Retail & E-Commerce', icon: BsCartFill, color: 'rgb(var(--accent) / 0.4)', glow: 'rgb(var(--accent) / 0.12)' },
+  { label: 'Professional Services', icon: BsLightbulb, color: 'rgb(var(--warning) / 0.4)', glow: 'rgb(var(--warning) / 0.1)' },
+  { label: 'Small & Mid-Sized Business', icon: BsBook, color: 'rgb(var(--brand-light) / 0.4)', glow: 'rgb(var(--brand-light) / 0.12)' },
 ];
 
 // ─── TRUSTED LOGOS (placeholder names) ───────────────────────────────────────

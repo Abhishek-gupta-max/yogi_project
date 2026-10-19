@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BsMenuButtonWide, BsXLg } from 'react-icons/bs';
+import { BsArrowRight, BsMenuButtonWide, BsXLg } from 'react-icons/bs';
 import { NAV_LINKS } from '../../constants';
 import Logo from './Logo';
 
@@ -27,16 +27,17 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-smooth ${
-        scrolled ? 'pt-3' : 'pt-5 md:pt-6'
+      className={`theme-dark fixed top-0 left-0 w-full z-50 border-b transition-all duration-500 ease-smooth ${
+        scrolled
+          ? 'bg-page/90 backdrop-blur-xl border-line shadow-float'
+          : 'bg-transparent border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      {/* Full-width bar; content stays aligned with the page container */}
+      <div className="max-w-7xl mx-auto px-6">
         <div
           className={`flex items-center justify-between transition-all duration-500 ease-smooth ${
-            scrolled
-              ? 'bg-cyber-darker/90 backdrop-blur-2xl border-b border-electric-DEFAULT/30 shadow-[0_4px_30px_rgba(21,73,138,0.15)] py-3 px-6 md:px-8 rounded-b-2xl rounded-t-none'
-              : 'bg-transparent border-b border-transparent py-4 px-4'
+            scrolled ? 'py-3' : 'py-5 md:py-6'
           }`}
         >
           {/* ── LOGO ──────────────────────────────────────── */}
@@ -45,23 +46,24 @@ export default function Navbar() {
           </Link>
 
           {/* ── DESKTOP NAV ───────────────────────────────── */}
-          <nav className="hidden xl:flex items-center gap-6">
+          <nav className="hidden xl:flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               link.label === 'Contact Us' ? (
                 <Link
                   key={link.path}
                   to={link.path}
                   id="nav-contact-btn"
-                  className="btn-primary px-5 py-2 text-sm ml-2"
+                  className="btn-primary px-5 py-2.5 text-sm ml-2"
                 >
                   Get a Free Assessment
+                  <BsArrowRight className="w-3.5 h-3.5" />
                 </Link>
               ) : (
                 <Link
                   key={link.path}
                   to={link.path}
                   id={`nav-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="text-sm font-semibold text-text-secondary hover:text-neon-cyan transition-colors duration-250 font-display"
+                  className={`nav-link ${location.hash && link.path.endsWith(location.hash) ? 'is-active' : ''}`}
                 >
                   {link.label}
                 </Link>
@@ -73,12 +75,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             id="mobile-menu-toggle"
-            className="xl:hidden relative z-50 p-2.5 rounded-xl text-text-secondary hover:text-white transition-all duration-300"
-            style={{
-              background: 'rgba(14, 33, 56, 0.6)',
-              border: '1px solid rgba(27, 58, 92, 0.8)',
-              backdropFilter: 'blur(12px)',
-            }}
+            className="xl:hidden relative z-50 p-2.5 rounded-xl text-fg-2 hover:text-fg bg-surface/70 border border-line backdrop-blur-md transition-colors duration-300"
             aria-label="Toggle navigation menu"
           >
             {isOpen ? <BsXLg className="w-5 h-5" /> : <BsMenuButtonWide className="w-5 h-5" />}
@@ -94,17 +91,11 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             exit={{ opacity: 0, y: -10, filter: 'blur(8px)' }}
             transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-            className="fixed inset-0 z-40 xl:hidden flex flex-col pt-28 pb-10 px-6 overflow-y-auto"
-            style={{ background: 'rgba(6, 18, 31, 0.98)', backdropFilter: 'blur(24px)' }}
+            className="fixed inset-0 z-40 xl:hidden flex flex-col pt-28 pb-10 px-6 overflow-y-auto bg-page/[0.98] backdrop-blur-xl"
           >
             {/* Animated grid bg */}
             <div className="absolute inset-0 cyber-grid opacity-30 pointer-events-none" />
             
-            {/* Logo repeat inside menu */}
-            <div className="flex items-center mb-8 relative z-10">
-              <Logo />
-            </div>
-
             <div className="flex flex-col gap-1 relative z-10">
               {NAV_LINKS.map((link, i) => (
                 <motion.div
@@ -122,16 +113,16 @@ export default function Navbar() {
                       >
                         Get a Free Assessment
                       </Link>
-                      <div className="text-center text-text-dim text-sm space-y-1">
+                      <div className="text-center text-fg-dim text-sm space-y-1">
                         <p>📧 info@veltrixsecure.com</p>
-                        <p className="text-text-dim/60 text-xs tracking-widest uppercase">Secure · Automate · Transform</p>
+                        <p className="text-fg-dim/60 text-xs tracking-widest uppercase">Secure · Automate · Transform</p>
                       </div>
                     </div>
                   ) : (
                     <Link
                       to={link.path}
                       onClick={() => setIsOpen(false)}
-                      className="block py-4 text-lg font-bold border-b border-cyber-border/50 hover:text-neon-cyan transition-colors font-display text-text-secondary"
+                      className="block py-4 text-lg font-bold border-b border-line hover:text-accent transition-colors font-display text-fg-2"
                     >
                       {link.label}
                     </Link>

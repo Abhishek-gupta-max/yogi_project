@@ -1,6 +1,6 @@
 export default function Logo({ className = '', iconOnly = false }) {
   return (
-    <div className={`flex items-center gap-2.5 font-display text-white tracking-tight ${className}`}>
+    <div className={`flex items-center gap-2.5 font-display text-fg tracking-tight ${className}`}>
       <svg className="w-[34px] h-[38px] flex-shrink-0" viewBox="0 0 80 92" fill="none">
         <path d="M6 8 L74 8 L74 60 Q74 86 40 92 Q6 86 6 60 Z" fill="#15498A" />
         <path d="M6 8 L40 8 L40 92 Q6 86 6 60 Z" fill="#0D2847" />
@@ -16,7 +16,7 @@ export default function Logo({ className = '', iconOnly = false }) {
       </svg>
       {!iconOnly && (
         <span className="font-bold text-xl md:text-2xl">
-          Veltrix<span className="text-neon-cyan">Secure</span>
+          Veltrix<span className="text-accent">Secure</span>
         </span>
       )}
     </div>

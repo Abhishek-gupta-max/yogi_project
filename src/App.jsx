@@ -10,14 +10,17 @@ export default function App() {
         position="top-right"
         toastOptions={{
           duration: 4000,
+          // Theme tokens from src/styles/index.css
           style: {
-            background: '#0D1117',
-            color: '#F0F6FF',
-            border: '1px solid rgba(0, 87, 255, 0.3)',
+            background: 'rgb(var(--surface))',
+            color: 'rgb(var(--fg))',
+            border: '1px solid rgb(var(--line))',
             borderRadius: '12px',
             fontSize: '14px',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+            boxShadow: 'var(--shadow-md)',
           },
+          success: { iconTheme: { primary: 'rgb(var(--success))', secondary: 'rgb(var(--surface))' } },
+          error: { iconTheme: { primary: 'rgb(var(--danger))', secondary: 'rgb(var(--surface))' } },
         }}
       />
       

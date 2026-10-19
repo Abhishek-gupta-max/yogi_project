@@ -4,14 +4,10 @@ export default function IndustriesSection() {
   return (
     <section
       id="industries"
-      className="py-16 relative overflow-hidden"
-      style={{ background: '#06121F' }}
+      className="section-page py-16 relative overflow-hidden"
     >
-      {/* Top divider */}
-      <div className="gradient-divider absolute top-0 inset-x-0" />
-
       {/* Background pattern */}
-      <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
@@ -23,9 +19,9 @@ export default function IndustriesSection() {
             transition={{ duration: 0.6 }}
             className="section-label mb-4 justify-center"
           >
-            <span className="w-8 h-[1px] bg-neon-cyan block" />
+            <span className="w-8 h-[1px] bg-accent block" />
             Industries We Serve
-            <span className="w-8 h-[1px] bg-neon-cyan block" />
+            <span className="w-8 h-[1px] bg-accent block" />
           </motion.div>
 
           <motion.h2
@@ -33,7 +29,7 @@ export default function IndustriesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-extrabold text-text-primary font-display leading-tight mb-5"
+            className="text-3xl md:text-4xl font-extrabold text-fg font-display leading-tight mb-5"
           >
             Trusted Across <span className="gradient-text">Sectors</span>
           </motion.h2>
@@ -43,7 +39,7 @@ export default function IndustriesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-text-muted text-base font-light max-w-2xl mx-auto"
+            className="text-fg-muted text-base font-light max-w-2xl mx-auto"
           >
             Secure, scalable technology solutions tailored to the unique needs of every industry.
           </motion.p>
@@ -65,17 +61,15 @@ export default function IndustriesSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05, duration: 0.5 }}
-              className="bg-cyber-card border border-cyber-border hover:border-neon-cyan text-text-primary hover:text-neon-cyan rounded-full px-6 py-3.5 text-base font-semibold flex items-center gap-3 transition-all duration-300 cursor-default hover:scale-105"
+              className="bg-surface border border-line shadow-card hover:border-accent/50 hover:shadow-card-hover text-fg hover:text-accent rounded-full px-6 py-3.5 text-base font-semibold flex items-center gap-3 transition-all duration-300 cursor-default hover:-translate-y-0.5"
             >
-              <span className="w-2 h-2 rounded-full bg-neon-cyan shadow-[0_0_10px_#00D4FF]" />
+              <span className="w-2 h-2 rounded-full bg-accent ring-4 ring-accent/15" />
               {industry}
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Bottom divider */}
-      <div className="gradient-divider absolute bottom-0 inset-x-0" />
     </section>
   );
 }

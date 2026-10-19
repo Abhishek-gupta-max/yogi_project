@@ -6,35 +6,28 @@ export default {
   ],
   theme: {
     extend: {
+      // ── VeltrixSecure design tokens (defined in src/styles/index.css) ──
+      // Every colour reads a CSS variable, so .theme-dark sections flip automatically.
       colors: {
-        // ── VeltrixSecure Brand Palette ──────────────────────────────
-        cyber: {
-          black:    '#050810',   // Ultra deep black
-          dark:     '#06121F',   // Veltrix Navy Main background
-          darker:   '#050E18',   // Darker navy
-          card:     '#0E2138',   // Card background
-          surface:  '#0A1A2E',   // Elevated surface
-          border:   '#1B3A5C',   // Subtle border
-          muted:    '#1B3A5C',   // Muted border
+        page: { DEFAULT: "rgb(var(--bg) / <alpha-value>)", alt: "rgb(var(--bg-alt) / <alpha-value>)" },
+        surface: { DEFAULT: "rgb(var(--surface) / <alpha-value>)", 2: "rgb(var(--surface-2) / <alpha-value>)" },
+        line: { DEFAULT: "rgb(var(--line) / <alpha-value>)", strong: "rgb(var(--line-strong) / <alpha-value>)" },
+        fg: {
+          DEFAULT: "rgb(var(--fg) / <alpha-value>)",
+          2: "rgb(var(--fg-2) / <alpha-value>)",
+          muted: "rgb(var(--fg-muted) / <alpha-value>)",
+          dim: "rgb(var(--fg-dim) / <alpha-value>)",
         },
-        electric: {
-          DEFAULT:  '#15498A',   // Primary Veltrix Blue (matching logo main blue)
-          light:    '#3A7BFF',   // Light variant
-          dim:      '#0D2847',   // Dark Veltrix Blue (matching logo dark blue)
-          glow:     'rgba(21, 73, 138, 0.4)', // Glow alpha
+        brand: {
+          DEFAULT: "rgb(var(--brand) / <alpha-value>)",
+          hover: "rgb(var(--brand-hover) / <alpha-value>)",
+          light: "rgb(var(--brand-light) / <alpha-value>)",
         },
-        neon: {
-          cyan:     '#00D4FF',   // Bright Cyan (matching logo bright cyan)
-          blue:     '#7FE9FF',   // Soft Cyan (matching logo light cyan)
-          purple:   '#7B61FF',   // Purple accent
-          green:    '#00FFB3',   // Success green
-        },
-        text: {
-          primary:  '#F0F6FF',   // Main white text
-          secondary: '#C8D6F0',  // Secondary text
-          muted:    '#8A9BB8',   // Muted text
-          dim:      '#4A5A78',   // Very dim text
-        },
+        "on-brand": "rgb(var(--on-brand) / <alpha-value>)",
+        accent: { DEFAULT: "rgb(var(--accent) / <alpha-value>)", soft: "rgb(var(--accent-soft) / <alpha-value>)" },
+        success: "rgb(var(--success) / <alpha-value>)",
+        warning: "rgb(var(--warning) / <alpha-value>)",
+        danger: "rgb(var(--danger) / <alpha-value>)",
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -46,12 +39,9 @@ export default {
         'display-md': ['3rem', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
       },
       boxShadow: {
-        'neon-blue':   '0 0 20px rgba(0, 87, 255, 0.4), 0 0 60px rgba(0, 87, 255, 0.15)',
-        'neon-cyan':   '0 0 20px rgba(0, 229, 255, 0.4), 0 0 60px rgba(0, 229, 255, 0.15)',
-        'neon-sm':     '0 0 10px rgba(0, 87, 255, 0.3)',
-        'glass':       '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
-        'glass-lg':    '0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
-        'card-hover':  '0 20px 60px rgba(0, 87, 255, 0.15)',
+        card:        "var(--shadow-sm)",
+        "card-hover": "var(--shadow-md)",
+        elevated:    "var(--shadow-lg)",
       },
       animation: {
         'fade-in':       'fadeIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards',
@@ -61,10 +51,7 @@ export default {
         'float-slow':    'float 10s ease-in-out infinite',
         'float-fast':    'float 4s ease-in-out infinite',
         'pulse-slow':    'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'pulse-glow':    'pulseGlow 3s ease-in-out infinite',
-        'shield-pulse':  'shieldPulse 4s ease-in-out infinite',
         'cyber-scan':    'cyberScan 3s linear infinite',
-        'border-glow':   'borderGlow 2s ease-in-out infinite alternate',
         'shimmer':       'shimmer 2.5s linear infinite',
         'spin-slow':     'spin 8s linear infinite',
         'marquee':       'marquee 30s linear infinite',
@@ -87,21 +74,9 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%':      { transform: 'translateY(-16px)' },
         },
-        pulseGlow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 87, 255, 0.3)' },
-          '50%':      { boxShadow: '0 0 50px rgba(0, 87, 255, 0.6), 0 0 80px rgba(0, 229, 255, 0.2)' },
-        },
-        shieldPulse: {
-          '0%, 100%': { transform: 'scale(1)', filter: 'drop-shadow(0 0 15px rgba(0,87,255,0.5))' },
-          '50%':      { transform: 'scale(1.03)', filter: 'drop-shadow(0 0 30px rgba(0,87,255,0.8)) drop-shadow(0 0 60px rgba(0,229,255,0.4))' },
-        },
         cyberScan: {
           '0%':   { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(100vh)' },
-        },
-        borderGlow: {
-          '0%':   { borderColor: 'rgba(0, 87, 255, 0.3)' },
-          '100%': { borderColor: 'rgba(0, 229, 255, 0.7)' },
         },
         shimmer: {
           '0%':   { backgroundPosition: '200% 0' },
@@ -134,7 +109,9 @@ export default {
         '88': '22rem',
         '128': '32rem',
       },
+      // Radius scale: xl = controls/buttons, 2xl = tiles, 3xl = cards
       borderRadius: {
+        '3xl': '1.25rem',
         '4xl': '2rem',
         '5xl': '2.5rem',
       },

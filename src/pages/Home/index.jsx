@@ -14,11 +14,11 @@ import ContactSection from '../../components/sections/ContactSection';
 export default function Home() {
   useDocumentTitle(
     'VeltrixSecure Technologies | Cybersecurity & IT Solutions',
-    'VeltrixSecure Technologies delivers intelligent cybersecurity, scalable technology solutions, and digital transformation services for modern businesses.'
+    'VeltrixSecure Technologies in Noida delivers cybersecurity, managed IT, cloud, networking, web and application development, and MySQL database support for modern businesses.'
   );
 
   return (
-    <div className="bg-cyber-dark">
+    <div className="bg-page">
 
       {/* ── 1. HERO (background + animated canvas) ──────────────────── */}
       <HeroSection />

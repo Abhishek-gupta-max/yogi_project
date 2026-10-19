@@ -36,19 +36,7 @@ const TEAM_MEMBERS = [
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-16 relative overflow-hidden" style={{ background: '#0B1120' }}>
-      <div className="gradient-divider absolute top-0 inset-x-0" />
-      <div className="absolute inset-0 dot-grid opacity-15 pointer-events-none" />
-
-      {/* Left Glow */}
-      <div
-        className="absolute -left-48 top-1/4 w-[500px] h-[500px] pointer-events-none rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%)',
-          filter: 'blur(80px)',
-        }}
-      />
-
+    <section id="team" className="section-alt py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
@@ -60,16 +48,16 @@ export default function TeamSection() {
             transition={{ duration: 0.6 }}
             className="section-label mb-4 justify-center"
           >
-            <span className="w-8 h-[1px] bg-neon-cyan block" />
+            <span className="w-8 h-[1px] bg-accent block" />
             Our Security Command
-            <span className="w-8 h-[1px] bg-neon-cyan block" />
+            <span className="w-8 h-[1px] bg-accent block" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-extrabold text-text-primary leading-tight mb-5 font-display"
+            className="text-3xl md:text-4xl font-extrabold text-fg leading-tight mb-5 font-display"
           >
             Meet Our <span className="gradient-text">Elite Team</span>
           </motion.h2>
@@ -78,7 +66,7 @@ export default function TeamSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-text-secondary text-base leading-relaxed font-light"
+            className="text-fg-2 text-base leading-relaxed font-light"
           >
             Our certified operators and threat analysts carry decadal experiences safeguarding corporate frameworks from modern vulnerability risks.
           </motion.p>
@@ -97,10 +85,10 @@ export default function TeamSection() {
                 className="h-full"
               >
                 <div
-                  className="glass-card-premium rounded-3xl p-8 flex flex-col items-center text-center h-full relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:border-neon-cyan/40"
+                  className="glass-card-premium rounded-3xl p-8 flex flex-col items-center text-center h-full relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:border-accent/40"
                 >
                   {/* Circular generated profile image */}
-                  <div className="w-32 h-32 rounded-full mb-6 p-1 bg-neon-cyan/5 border border-white/5 group-hover:border-neon-cyan/40 group-hover:bg-neon-cyan/10 transition-all duration-300 flex-shrink-0 relative overflow-hidden">
+                  <div className="w-32 h-32 rounded-full mb-6 p-1 bg-accent/5 border border-line group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300 flex-shrink-0 relative overflow-hidden">
                     <img
                       src={member.avatar}
                       alt={member.name}
@@ -109,41 +97,41 @@ export default function TeamSection() {
                     />
                   </div>
 
-                  <h3 className="text-xl font-bold text-text-primary mb-1 font-display group-hover:text-white transition-colors">
+                  <h3 className="text-xl font-bold text-fg mb-1 font-display group-hover:text-accent transition-colors">
                     {member.name}
                   </h3>
                   
-                  <div className="text-neon-cyan text-xs font-bold uppercase tracking-wider mb-2">
+                  <div className="text-accent text-xs font-bold uppercase tracking-wider mb-2">
                     {member.role}
                   </div>
                   
-                  <div className="text-text-muted text-xs font-semibold mb-4 px-2 py-0.5 rounded-full bg-white/5 border border-white/5">
+                  <div className="text-fg-muted text-xs font-semibold mb-4 px-2 py-0.5 rounded-full bg-surface-2 border border-line">
                     {member.credentials}
                   </div>
 
-                  <p className="text-text-secondary text-sm leading-relaxed font-light mb-6 flex-grow">
+                  <p className="text-fg-2 text-sm leading-relaxed font-light mb-6 flex-grow">
                     {member.bio}
                   </p>
 
                   {/* Social Buttons */}
-                  <div className="flex items-center gap-4 pt-4 border-t border-white/5 w-full justify-center">
+                  <div className="flex items-center gap-4 pt-4 border-t border-line w-full justify-center">
                     <a
                       href={member.linkedin}
-                      className="text-text-muted hover:text-neon-cyan transition-colors p-2 rounded-lg bg-white/5 border border-white/5 hover:border-neon-cyan/30"
+                      className="text-fg-muted hover:text-accent transition-colors p-2 rounded-lg bg-surface-2 border border-line hover:border-accent/30"
                       aria-label={`${member.name} LinkedIn Profile`}
                     >
                       <FiLinkedin className="w-4 h-4" />
                     </a>
                     <a
                       href={member.github}
-                      className="text-text-muted hover:text-neon-cyan transition-colors p-2 rounded-lg bg-white/5 border border-white/5 hover:border-neon-cyan/30"
+                      className="text-fg-muted hover:text-accent transition-colors p-2 rounded-lg bg-surface-2 border border-line hover:border-accent/30"
                       aria-label={`${member.name} GitHub Profile`}
                     >
                       <FiGithub className="w-4 h-4" />
                     </a>
                     <a
                       href={member.twitter}
-                      className="text-text-muted hover:text-neon-cyan transition-colors p-2 rounded-lg bg-white/5 border border-white/5 hover:border-neon-cyan/30"
+                      className="text-fg-muted hover:text-accent transition-colors p-2 rounded-lg bg-surface-2 border border-line hover:border-accent/30"
                       aria-label={`${member.name} Twitter Profile`}
                     >
                       <FiTwitter className="w-4 h-4" />

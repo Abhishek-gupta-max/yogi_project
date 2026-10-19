@@ -7,24 +7,18 @@ export default function Loader({ size = 'medium', fullPage = false }) {
     large: 'w-20 h-20 border-8'
   };
 
-  const containerClasses = fullPage 
-    ? 'fixed inset-0 z-50 flex items-center justify-center'
+  const containerClasses = fullPage
+    ? 'fixed inset-0 z-50 flex items-center justify-center bg-page'
     : 'flex items-center justify-center p-8';
 
-  const containerStyle = fullPage ? { background: '#0A0A14' } : {};
-
   return (
-    <div className={containerClasses} style={containerStyle}>
+    <div className={containerClasses}>
       <div className="relative">
-        {/* Animated Background Ring */}
+        {/* Track */}
+        <div className={`${sizeClasses[size]} border-line rounded-full`} />
+        {/* Spinner */}
         <motion.div
-          className={`${sizeClasses[size]} border-navy-slate rounded-full`}
-          style={{ borderTopColor: 'transparent' }}
-        />
-        {/* Animated Inner Tech Ring */}
-        <motion.div
-          className={`${sizeClasses[size]} rounded-full absolute top-0 left-0`}
-          style={{ borderColor: '#0050FF', borderTopColor: 'transparent' }}
+          className={`${sizeClasses[size]} border-brand border-t-transparent rounded-full absolute top-0 left-0`}
           animate={{ rotate: 360 }}
           transition={{
             repeat: Infinity,
