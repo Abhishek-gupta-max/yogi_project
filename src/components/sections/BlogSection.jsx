@@ -43,9 +43,7 @@ export default function BlogSection() {
             transition={{ duration: 0.6 }}
             className="section-label mb-4 justify-center"
           >
-            <span className="w-8 h-[1px] bg-accent block" />
             Threat Insights
-            <span className="w-8 h-[1px] bg-accent block" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -80,7 +78,8 @@ export default function BlogSection() {
                 className="h-full"
               >
                 <div
-                  className="glass-card-premium rounded-3xl overflow-hidden flex flex-col justify-between h-full relative group transition-all duration-300 hover:-translate-y-1"
+                  data-card
+                  className="glass-card-premium rounded-3xl overflow-hidden flex flex-col justify-between h-full relative group transition-all duration-300"
                 >
                   <div>
                     {/* Cover Image */}

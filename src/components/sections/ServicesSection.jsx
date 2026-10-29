@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { BsArrowRight, BsCheckCircle } from 'react-icons/bs';
 import { SERVICES } from '../../constants';
 
 function ServiceCard({ service, index }) {
@@ -12,7 +13,7 @@ function ServiceCard({ service, index }) {
       transition={{ delay: index * 0.08, duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
       className="h-full"
     >
-      <div className="service-card group h-full">
+      <div data-card className="service-card group h-full">
         {/* Top accent line on hover */}
         <div className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-brand-light to-accent" />
 
@@ -35,9 +36,29 @@ function ServiceCard({ service, index }) {
         <h3 className="text-lg font-bold text-fg mb-3 leading-snug relative z-10 font-display group-hover:text-accent transition-colors">
           {service.title}
         </h3>
-        <p className="text-fg-muted text-sm leading-relaxed relative z-10 font-light">
+        <p className="text-fg-muted text-sm leading-relaxed relative z-10 mb-5">
           {service.shortDesc}
         </p>
+
+        {/* Key points from the service's existing feature list */}
+        <ul className="relative z-10 flex flex-col gap-2 mb-7">
+          {service.features.slice(0, 3).map((feature) => (
+            <li key={feature} className="flex items-center gap-2.5 text-sm text-fg-2">
+              <BsCheckCircle className="w-4 h-4 text-accent flex-shrink-0" aria-hidden="true" />
+              {feature}
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA: leads to the contact form */}
+        <a
+          href="#contact"
+          aria-label={`Get started with ${service.title}`}
+          className="btn-outline service-cta mt-auto relative z-10 w-full py-3"
+        >
+          Get Started
+          <BsArrowRight className="w-4 h-4" />
+        </a>
       </div>
     </motion.div>
   );
@@ -47,7 +68,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="section-page py-16 relative overflow-hidden"
+      className="section-alt py-16 relative overflow-hidden"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
@@ -62,9 +83,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.6 }}
             className="section-label mb-4 justify-center"
           >
-            <span className="w-8 h-[1px] bg-accent block" />
-            What We Do
-            <span className="w-8 h-[1px] bg-accent block" />
+            Our Services
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -73,7 +92,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-3xl md:text-4xl font-extrabold text-fg leading-tight mb-5 font-display"
           >
-            End-to-End <span className="gradient-text">Technology</span> Expertise
+            What We <span className="gradient-text">Offer</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}

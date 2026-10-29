@@ -198,10 +198,11 @@ export default function StatsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="relative group h-full"
+                className="relative h-full"
               >
                 <div
-                  className="glass-card-premium rounded-3xl p-6.5 flex flex-col justify-between h-full relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                  data-card
+                  className="glass-card-premium group rounded-3xl p-6.5 flex flex-col justify-between h-full relative overflow-hidden transition-all duration-300"
                   style={{ padding: '24px 28px' }}
                 >
                   <div className="flex items-start justify-between mb-4">

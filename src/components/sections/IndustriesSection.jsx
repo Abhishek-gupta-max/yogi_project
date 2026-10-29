@@ -4,7 +4,7 @@ export default function IndustriesSection() {
   return (
     <section
       id="industries"
-      className="section-page py-16 relative overflow-hidden"
+      className="section-alt py-16 relative overflow-hidden"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
@@ -19,9 +19,7 @@ export default function IndustriesSection() {
             transition={{ duration: 0.6 }}
             className="section-label mb-4 justify-center"
           >
-            <span className="w-8 h-[1px] bg-accent block" />
             Industries We Serve
-            <span className="w-8 h-[1px] bg-accent block" />
           </motion.div>
 
           <motion.h2
@@ -57,11 +55,12 @@ export default function IndustriesSection() {
           ].map((industry, idx) => (
             <motion.div
               key={industry}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05, duration: 0.5 }}
-              className="bg-surface border border-line shadow-card hover:border-accent/50 hover:shadow-card-hover text-fg hover:text-accent rounded-full px-6 py-3.5 text-base font-semibold flex items-center gap-3 transition-all duration-300 cursor-default hover:-translate-y-0.5"
+              data-card
+              className="bg-surface border border-line shadow-card text-fg rounded-full px-6 py-3.5 text-base font-semibold flex items-center gap-3 transition-all duration-300 cursor-default"
             >
               <span className="w-2 h-2 rounded-full bg-accent ring-4 ring-accent/15" />
               {industry}

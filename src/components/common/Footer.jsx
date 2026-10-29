@@ -2,31 +2,23 @@ import { Link } from 'react-router-dom';
 import {
   BsShieldCheck,
   BsLinkedin,
-  BsTwitterX,
-  BsGithub,
-  BsFacebook,
   BsEnvelopeFill,
   BsTelephoneFill,
   BsGeoAltFill,
   BsArrowRight,
 } from 'react-icons/bs';
-import { SOCIAL_LINKS, CONTACT_INFO } from '../../constants';
+import { SOCIAL_LINKS, CONTACT_INFO, SERVICES } from '../../constants';
 import Logo from './Logo';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const services = [
-    { label: 'Vulnerability Assessment', path: '/#services' },
-    { label: 'Penetration Testing', path: '/#services' },
-    { label: 'Cloud Security', path: '/#services' },
-    { label: 'Incident Response', path: '/#services' },
-    { label: 'Security Consulting', path: '/#services' },
-    { label: 'Security Training', path: '/#services' },
-  ];
+  // Footer lists mirror the real services and the main navigation
+  const services = SERVICES.slice(0, 6).map((service) => ({ label: service.title, path: '/#services' }));
 
   const quickLinks = [
     { label: 'About Us', path: '/#about' },
+    { label: 'Our Process', path: '/#process' },
     { label: 'Why Choose Us', path: '/#why' },
     { label: 'Client Reviews', path: '/#testimonials' },
     { label: 'Blog Insights', path: '/#blog' },
@@ -73,9 +65,6 @@ export default function Footer() {
             <div className="flex items-center gap-2.5">
               {[
                 { href: SOCIAL_LINKS.linkedin, icon: BsLinkedin, label: 'LinkedIn' },
-                { href: SOCIAL_LINKS.twitter, icon: BsTwitterX, label: 'Twitter' },
-                { href: SOCIAL_LINKS.github, icon: BsGithub, label: 'GitHub' },
-                { href: SOCIAL_LINKS.facebook, icon: BsFacebook, label: 'Facebook' },
               ].map(({ href, icon: Icon, label }) => (
                 <a
                   key={label}
@@ -98,12 +87,12 @@ export default function Footer() {
             >
               Services
             </h4>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-0.5">
               {services.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.path}
-                    className="text-sm text-fg-muted hover:text-accent flex items-center gap-2 group transition-all duration-200"
+                    className="text-sm text-fg-muted hover:text-accent inline-flex items-center gap-2 py-1.5 group transition-all duration-200"
                   >
                     <BsArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-accent flex-shrink-0" />
                     {item.label}
@@ -120,12 +109,12 @@ export default function Footer() {
             >
               Company
             </h4>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-0.5">
               {quickLinks.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.path}
-                    className="text-sm text-fg-muted hover:text-accent flex items-center gap-2 group transition-all duration-200"
+                    className="text-sm text-fg-muted hover:text-accent inline-flex items-center gap-2 py-1.5 group transition-all duration-200"
                   >
                     <BsArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-accent flex-shrink-0" />
                     {item.label}
@@ -180,7 +169,7 @@ export default function Footer() {
                 <div>
                   <div className="text-[10px] text-fg-dim uppercase tracking-wider mb-0.5">Headquarters</div>
                   <div className="text-xs text-fg-muted leading-relaxed">
-                    Sector 12, Noida,<br />Uttar Pradesh – 201301
+                    D-9, Sector 3, Noida,<br />Uttar Pradesh – 201301
                   </div>
                 </div>
               </div>
@@ -206,9 +195,9 @@ export default function Footer() {
             All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="hover:text-accent transition-colors">Terms of Service</Link>
-            <Link to="/#contact" className="hover:text-accent transition-colors">Contact</Link>
+            <Link to="/privacy-policy" className="inline-block py-2 hover:text-accent transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="inline-block py-2 hover:text-accent transition-colors">Terms of Service</Link>
+            <Link to="/#contact" className="inline-block py-2 hover:text-accent transition-colors">Contact</Link>
           </div>
         </div>
       </div>

@@ -8,72 +8,79 @@
    VeltrixSecure design tokens
    Values are RGB channels so Tailwind opacity modifiers work (bg-accent/10).
 
-   Brand palette: Midnight Navy #0B1220 · Deep Blue #14233B · Electric Cyan #06B6D4
-                  Cool White #F4F7FB · White #FFFFFF · Slate Text #334155
+   Brand palette: Deep Navy #06152F · Dark Blue #0A2348 · Primary Blue #087CFF
+                  Electric Cyan #16C8FF · White #FFFFFF · Light Blue #F2F7FF
+                  Secondary Text #667085
 
-   :root         → light content sections (Cool White / White, Slate text)
-   .theme-dark   → hero, stats band, CTA/vision panels, navbar, footer
+   #087CFF carries only 3.9:1 against white, so buttons and blue text on light
+   backgrounds use the deeper #0068E0 (5.2:1); #087CFF stays in gradients/decor.
+
+   :root         → light content sections (White / Light Blue)
+   .theme-dark   → hero, stats band, CTA panels, navbar, footer
    ══════════════════════════════════════════════════════════════════════ */
 :root {
   /* Backgrounds & surfaces */
-  --bg:           244 247 251;  /* #F4F7FB Cool White */
-  --bg-alt:       255 255 255;  /* #FFFFFF White */
+  --bg:           255 255 255;  /* #FFFFFF */
+  --bg-alt:       242 247 255;  /* #F2F7FF Light Blue */
   --surface:      255 255 255;  /* cards */
-  --surface-2:    244 247 251;  /* inputs, nested panels */
-  --line:         226 232 240;  /* #E2E8F0 */
-  --line-strong:  203 213 225;  /* #CBD5E1 */
+  --surface-2:    246 250 255;  /* #F6FAFF inputs, nested panels */
+  --line:         220 230 245;  /* #DCE6F5 */
+  --line-strong:  186 204 230;  /* #BACCE6 */
 
   /* Text */
-  --fg:           11 18 32;     /* #0B1220 headings */
-  --fg-2:         51 65 85;     /* #334155 Slate body text */
-  --fg-muted:     100 116 139;  /* #64748B secondary (4.7:1 on white) */
-  --fg-dim:       148 163 184;  /* #94A3B8 placeholders */
+  --fg:           6 21 47;      /* #06152F headings */
+  --fg-2:         52 64 84;     /* #344054 body */
+  --fg-muted:     102 112 133;  /* #667085 secondary (4.8:1 on white) */
+  --fg-dim:       152 162 179;  /* #98A2B3 placeholders */
 
-  /* Actions — Electric Cyan button with navy label (8.6:1) */
-  --brand:        6 182 212;    /* #06B6D4 */
-  --brand-hover:  8 145 178;    /* #0891B2 */
-  --brand-light:  14 116 144;   /* #0E7490 gradient start on light */
-  --on-brand:     11 18 32;
-  /* Cyan as text: #06B6D4 is only 2.4:1 on white, so light sections use cyan-700 */
-  --accent:       14 116 144;   /* #0E7490 (5.4:1 on white) */
-  --accent-soft:  6 182 212;    /* #06B6D4 decorative */
+  /* Actions */
+  --brand:        0 104 224;    /* #0068E0 button fill, white label 5.2:1 */
+  --brand-hover:  0 86 189;     /* #0056BD */
+  --brand-light:  8 124 255;    /* #087CFF Primary Blue (gradients) */
+  --on-brand:     255 255 255;
+  --accent:       0 104 224;    /* #0068E0 blue text/icons on light */
+  --accent-soft:  22 200 255;   /* #16C8FF Electric Cyan, decorative */
+  --grad-from:    8 124 255;    /* headline highlight #087CFF → #0068E0 */
+  --grad-to:      0 104 224;
 
   /* Status */
-  --success:      4 120 87;     /* #047857 */
-  --warning:      180 83 9;     /* #B45309 */
-  --danger:       185 28 28;    /* #B91C1C */
+  --success:      2 122 72;     /* #027A48 */
+  --warning:      181 71 8;     /* #B54708 */
+  --danger:       217 45 32;    /* #D92D20 */
 
-  /* Elevation (navy-tinted, no glow) */
-  --shadow-sm: 0 1px 2px rgb(11 18 32 / 0.04), 0 2px 8px rgb(11 18 32 / 0.05);
-  --shadow-md: 0 6px 16px rgb(11 18 32 / 0.06), 0 16px 36px rgb(11 18 32 / 0.08);
-  --shadow-lg: 0 24px 56px rgb(11 18 32 / 0.16);
+  /* Elevation (navy-tinted) */
+  --shadow-sm: 0 1px 2px rgb(6 21 47 / 0.05), 0 1px 3px rgb(6 21 47 / 0.06);
+  --shadow-md: 0 4px 8px -2px rgb(6 21 47 / 0.06), 0 14px 28px -6px rgb(8 124 255 / 0.14);
+  --shadow-lg: 0 20px 48px -12px rgb(6 21 47 / 0.22);
 
   color-scheme: light;
 }
 
 .theme-dark {
-  --bg:           11 18 32;     /* #0B1220 Midnight Navy */
-  --bg-alt:       15 26 46;     /* #0F1A2E */
-  --surface:      20 35 59;     /* #14233B Deep Blue */
-  --surface-2:    27 46 75;     /* #1B2E4B */
-  --line:         36 56 90;     /* #24385A */
-  --line-strong:  52 78 118;    /* #344E76 */
+  --bg:           6 21 47;      /* #06152F Deep Navy */
+  --bg-alt:       10 35 72;     /* #0A2348 Dark Blue */
+  --surface:      13 42 84;     /* #0D2A54 */
+  --surface-2:    18 52 100;    /* #123464 */
+  --line:         30 66 118;    /* #1E4276 */
+  --line-strong:  48 90 150;    /* #305A96 */
 
-  --fg:           244 247 251;  /* #F4F7FB */
-  --fg-2:         203 213 225;  /* #CBD5E1 */
-  --fg-muted:     148 163 184;  /* #94A3B8 */
-  --fg-dim:       100 116 139;  /* #64748B */
+  --fg:           255 255 255;
+  --fg-2:         212 222 238;  /* #D4DEEE */
+  --fg-muted:     160 176 202;  /* #A0B0CA (7.6:1 on navy) */
+  --fg-dim:       110 128 158;  /* #6E809E */
 
-  --brand:        6 182 212;    /* #06B6D4 */
-  --brand-hover:  34 211 238;   /* #22D3EE */
-  --brand-light:  103 232 249;  /* #67E8F9 */
-  --on-brand:     11 18 32;
-  --accent:       6 182 212;    /* #06B6D4 (7.9:1 on navy) */
-  --accent-soft:  103 232 249;  /* #67E8F9 */
+  --brand:        0 104 224;    /* #0068E0, white label 5.2:1 */
+  --brand-hover:  8 112 240;    /* #0870F0, white label 4.6:1 */
+  --brand-light:  22 200 255;   /* #16C8FF */
+  --on-brand:     255 255 255;
+  --accent:       22 200 255;   /* #16C8FF Electric Cyan (9.4:1 on navy) */
+  --accent-soft:  126 220 255;  /* #7EDCFF */
+  --grad-from:    22 200 255;   /* #16C8FF → #087CFF */
+  --grad-to:      8 124 255;
 
-  --success:      52 211 153;
-  --warning:      251 191 36;
-  --danger:       248 113 113;
+  --success:      50 213 131;
+  --warning:      253 176 34;
+  --danger:       249 112 102;
 
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 12px rgb(0 0 0 / 0.2);
   --shadow-md: 0 10px 28px rgb(0 0 0 / 0.35);
@@ -95,7 +102,7 @@
   }
 
   /* Anchor jumps land below the fixed navbar instead of under it */
-  section[id] { scroll-margin-top: 72px; }
+  section[id], [data-anchor] { scroll-margin-top: 72px; }
 
   body {
     @apply bg-page text-fg antialiased overflow-x-hidden;
@@ -145,8 +152,8 @@
                 border-color 0.35s ease, box-shadow 0.35s ease;
   }
 
-  .glass-card:hover,
-  .glass-card-premium:hover {
+  .glass-card:hover, .glass-card.is-tapped,
+  .glass-card-premium:hover, .glass-card-premium.is-tapped {
     border-color: rgb(var(--accent) / 0.4);
     box-shadow: var(--shadow-md);
   }
@@ -158,14 +165,14 @@
     border: 1px solid rgb(var(--accent) / 0.18);
     color: rgb(var(--accent));
   }
-  .group:hover .icon-tile {
+  .group:hover .icon-tile, .group.is-tapped .icon-tile {
     background: rgb(var(--accent) / 0.14);
     border-color: rgb(var(--accent) / 0.4);
   }
 
   /* ── Gradient Text (headline highlight word) ── */
   .gradient-text {
-    background: linear-gradient(120deg, rgb(var(--brand-light)) 0%, rgb(var(--accent)) 100%);
+    background: linear-gradient(120deg, rgb(var(--grad-from)) 0%, rgb(var(--grad-to)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -277,9 +284,20 @@
   }
 
   /* ── Section Labels ── */
+  /* Pill-style eyebrow above section headings */
   .section-label {
-    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest;
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest;
     color: rgb(var(--accent));
+    background: rgb(var(--surface));
+    border: 1px solid rgb(var(--line));
+    box-shadow: var(--shadow-sm);
+  }
+  .section-label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: rgb(var(--accent));
   }
 
   /* ── Divider Lines ── */
@@ -292,7 +310,8 @@
   .service-card {
     @apply glass-card rounded-3xl p-8 flex flex-col h-full relative overflow-hidden;
   }
-  .service-card:hover { transform: translateY(-4px); }
+  .service-card:hover, .service-card.is-tapped { transform: translateY(-4px); }
+
 
   /* ── Scroll Progress Bar ── */
   .scroll-progress {
@@ -379,4 +398,50 @@ iframe {
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+/* ── Card hover: brand fill sweeps in from the left ───────────────────
+   Every [data-card] gets it on hover, and on tap via .is-tapped (useTapToHover).
+   Inside a filled card the text/icon tokens switch to white tints, so titles,
+   descriptions, icons and checkmarks recolour without per-card classes.   */
+[data-card] {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+[data-card]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgb(var(--brand));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+[data-card]:is(:hover, .is-tapped)::before { transform: scaleX(1); }
+[data-card]:is(:hover, .is-tapped) {
+  --fg:          255 255 255;
+  --fg-2:        232 240 255;
+  --fg-muted:    214 226 250;
+  --fg-dim:      184 204 240;
+  --accent:      255 255 255;
+  --accent-soft: 255 255 255;
+  --grad-from:   255 255 255;
+  --grad-to:     255 255 255;
+  --line:        255 255 255;
+  --warning:     253 200 70;   /* rating stars stay visible on the fill */
+  border-color: rgb(var(--brand-hover));
+  box-shadow: 0 16px 48px rgb(var(--brand) / 0.4);
+  transform: translateY(-5px);
+}
+[data-card] * { transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease; }
+
+/* Buttons inside a filled card turn white so they stay visible */
+[data-card]:is(:hover, .is-tapped) .service-cta {
+  color: rgb(var(--brand));
+  background: #fff;
+  border-color: #fff;
 }

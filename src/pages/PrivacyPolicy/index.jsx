@@ -13,9 +13,7 @@ export default function PrivacyPolicy() {
       >
         <div className="absolute inset-0 cyber-grid opacity-30 pointer-events-none" />
         <div className="section-label justify-center mb-4 relative z-10">
-          <span className="w-8 h-[1px] bg-accent block" />
           Legal
-          <span className="w-8 h-[1px] bg-accent block" />
         </div>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

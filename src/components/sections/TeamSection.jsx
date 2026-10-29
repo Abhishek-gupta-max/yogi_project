@@ -48,9 +48,7 @@ export default function TeamSection() {
             transition={{ duration: 0.6 }}
             className="section-label mb-4 justify-center"
           >
-            <span className="w-8 h-[1px] bg-accent block" />
             Our Security Command
-            <span className="w-8 h-[1px] bg-accent block" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -85,7 +83,8 @@ export default function TeamSection() {
                 className="h-full"
               >
                 <div
-                  className="glass-card-premium rounded-3xl p-8 flex flex-col items-center text-center h-full relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:border-accent/40"
+                  data-card
+                  className="glass-card-premium rounded-3xl p-8 flex flex-col items-center text-center h-full relative overflow-hidden group transition-all duration-300 hover:border-accent/40"
                 >
                   {/* Circular generated profile image */}
                   <div className="w-32 h-32 rounded-full mb-6 p-1 bg-accent/5 border border-line group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300 flex-shrink-0 relative overflow-hidden">

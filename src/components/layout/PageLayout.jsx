@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from '../common/Navbar';
 import Footer from '../common/Footer';
 import ScrollToTop from '../common/ScrollToTop';
+import useTapToHover from '../../hooks/useTapToHover';
 
 // ── Custom Cursor ────────────────────────────────────────────────────────────
 function CustomCursor() {
@@ -81,6 +82,7 @@ function ScrollProgressBar() {
 // ── Page Layout ──────────────────────────────────────────────────────────────
 export default function PageLayout({ children }) {
   const location = useLocation();
+  useTapToHover();
 
   useEffect(() => {
     if (!location.hash) {

@@ -117,5 +117,12 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Touch screens have no hover: a tapped card gets .is-tapped (see useTapToHover),
+    // and every hover:/group-hover: style applies to it too.
+    function ({ addVariant }) {
+      addVariant('hover', '&:is(:hover, .is-tapped)');
+      addVariant('group-hover', ':merge(.group):is(:hover, .is-tapped) &');
+    },
+  ],
 }

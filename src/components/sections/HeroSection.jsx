@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { BsArrowRight, BsGlobe2, BsLightning } from 'react-icons/bs';
+import { BsArrowRight, BsCheckCircleFill } from 'react-icons/bs';
 import { INDUSTRIES } from '../../constants';
 
 // ── Network Canvas ─────────────────────────────────────────────────────────
@@ -97,82 +97,50 @@ function CyberCanvas() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} aria-hidden="true" className="absolute inset-0 w-full h-full opacity-60" />;
+  return <canvas ref={canvasRef} aria-hidden="true" className="absolute inset-0 w-full h-full opacity-40" />;
 }
 
-// ── Hero Security Illustration ────────────────────────────────────────────
-// Existing /cyber_illustration.png artwork, faded into the navy background
-// with a radial mask. Static — no looping motion.
-const ILLUSTRATION_MASK = 'radial-gradient(circle at 50% 50%, black 42%, transparent 70%)';
+// Strengths already stated elsewhere on the site (no new claims)
+const TRUST_POINTS = ['10+ Years of Expertise', '24×7 Monitoring & Support', 'Security-First Approach', 'Reliable Support'];
 
-function HeroIllustration() {
+const fadeUp = (delay) => ({
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, delay, ease: [0.23, 1, 0.32, 1] },
+});
+
+export default function HeroSection() {
   return (
-    <div className="relative w-[360px] h-[360px] xl:w-[400px] xl:h-[400px]">
-      <div className="absolute inset-[24%] rounded-full bg-accent/15 blur-3xl" />
-
+    <section id="home" className="theme-dark relative overflow-hidden flex flex-col lg:min-h-screen bg-page">
+      {/* ── Background image: engineer at a monitoring workspace ── */}
       <img
-        src="/cyber_illustration.png"
+        src="/hero-workspace.webp"
         alt=""
         aria-hidden="true"
         width="1024"
         height="1024"
-        decoding="async"
-        className="relative w-full h-full object-cover select-none pointer-events-none saturate-[0.85]"
-        style={{ maskImage: ILLUSTRATION_MASK, WebkitMaskImage: ILLUSTRATION_MASK }}
+        className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-[center_35%] select-none pointer-events-none"
       />
-
-      <div className="absolute inset-[6%] rounded-full border border-dashed border-accent/20" />
-    </div>
-  );
-}
-
-export default function HeroSection() {
-  const trustBadges = [
-    // { icon: BsShieldCheck, text: 'ISO 27001 Certified' },
-    { icon: BsLightning, text: '24/7 SOC Operations' },
-    { icon: BsGlobe2, text: 'Zero-Trust Architecture' },
-  ];
-
-  return (
-    <section
-      id="home"
-      className="theme-dark relative overflow-hidden flex flex-col lg:min-h-screen"
-      style={{
-        background: 'linear-gradient(180deg, rgb(var(--bg) / 0.86) 0%, rgb(var(--bg) / 0.97) 100%), url("/cyber-bg.png") center/cover no-repeat fixed',
-      }}
-    >
-      {/* ── Animated Background Canvas ── */}
-      <CyberCanvas />
-
-      {/* ── Static grid overlay ── */}
-      <div className="absolute inset-0 cyber-grid opacity-30" />
-
-      {/* ── Gradient overlays ── */}
+      {/* Navy overlay: solid behind the text, lifting toward the image on the right */}
       <div
+        aria-hidden="true"
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(ellipse 80% 70% at 50% 30%, rgb(var(--surface) / 0.6) 0%, transparent 60%)',
+            'linear-gradient(90deg, rgb(var(--bg) / 0.97) 0%, rgb(var(--bg) / 0.9) 45%, rgb(var(--bg-alt) / 0.55) 100%), linear-gradient(0deg, rgb(var(--bg)) 0%, transparent 35%)',
         }}
       />
+      <div aria-hidden="true" className="absolute inset-0 lg:hidden bg-page/50" />
 
-      {/* ── Soft corner glow ── */}
-      <div
-        aria-hidden="true"
-        className="absolute -left-40 top-[10%] w-[560px] h-[560px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgb(var(--accent) / 0.08) 0%, transparent 70%)' }}
-      />
+      {/* ── Subtle network animation ── */}
+      <CyberCanvas />
 
       {/* ── Content ── */}
       <div className="relative z-10 flex-1 flex items-center w-full">
-      <div className="max-w-7xl mx-auto px-6 pt-28 pb-12 md:pt-32 lg:pb-14 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-center">
-          {/* Left: Text Content */}
-          <div className="lg:col-span-7">
+        <div className="max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-36 lg:pb-20 w-full">
+          <div className="max-w-2xl">
             <motion.div
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+              {...fadeUp(0)}
               className="inline-flex items-center gap-2.5 px-3.5 py-1.5 mb-6 rounded-full bg-accent/10 border border-accent/25 text-[11px] font-bold uppercase tracking-widest text-accent"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -180,126 +148,42 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 32 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
-              className="text-[2.5rem] sm:text-5xl xl:text-[3.25rem] leading-[1.1] font-extrabold tracking-tight mb-5 font-display text-balance"
+              {...fadeUp(0.1)}
+              className="text-[2.5rem] sm:text-5xl xl:text-[3.75rem] leading-[1.08] font-extrabold tracking-tight mb-6 font-display text-balance"
             >
-              Secure Digital{' '}
-              <span className="block relative">
-                <span className="gradient-text">Infrastructure</span>
-              </span>
-              <span className="text-fg">for the Modern</span>{' '}
-              <span className="text-fg">Future</span>
+              Build Your <span className="gradient-text">Digital Future</span> with VeltrixSecure
             </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
-              className="text-fg-muted text-base md:text-lg leading-relaxed mb-8 max-w-xl"
-            >
-              <strong className="text-fg-2 font-semibold">VeltrixSecure Technologies</strong>{' '}
-              delivers intelligent cybersecurity, scalable technology solutions, and digital transformation
-              services for modern businesses.
+            <motion.p {...fadeUp(0.2)} className="text-fg-2 text-base md:text-lg leading-relaxed mb-9 max-w-xl">
+              <strong className="text-fg font-semibold">VeltrixSecure Technologies</strong> delivers
+              cybersecurity, web and application development, technical support and MySQL support to help
+              your business grow securely in the digital world.
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
-              className="flex flex-wrap gap-4 mb-10"
-            >
-              <a href="#contact" id="hero-get-started-btn" className="btn-primary text-base px-8 py-4 w-full sm:w-auto">
-                Get Started
+            <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row gap-4 mb-10">
+              <a href="#services" id="hero-explore-services-btn" className="btn-primary text-base px-8 py-4">
+                Explore Our Services
                 <BsArrowRight className="w-4 h-4" />
               </a>
-              <a href="#services" id="hero-explore-services-btn" className="btn-outline text-base px-8 py-4 w-full sm:w-auto">
-                Explore Services
+              <a href="#contact" id="hero-get-started-btn" className="btn-outline text-base px-8 py-4">
+                Contact Us
               </a>
             </motion.div>
 
-            {/* Hero Stats Grid */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
-              className="grid grid-cols-3 divide-x divide-line pt-7 border-t border-line mb-7 max-w-lg"
+            {/* Trust indicators */}
+            <motion.ul
+              {...fadeUp(0.4)}
+              className="grid grid-cols-1 min-[430px]:grid-cols-2 gap-x-8 gap-y-3 pt-8 border-t border-line max-w-xl"
             >
-              <div className="first:pl-0 pl-4 sm:pl-6">
-                <div className="text-2xl sm:text-3xl font-black font-display text-fg">10+</div>
-                <div className="text-[10px] text-fg-muted mt-1.5 leading-snug tracking-wider uppercase font-bold">Years of Expertise</div>
-              </div>
-              <div className="first:pl-0 pl-4 sm:pl-6">
-                <div className="text-2xl sm:text-3xl font-black font-display text-fg">24×7</div>
-                <div className="text-[10px] text-fg-muted mt-1.5 leading-snug tracking-wider uppercase font-bold">Monitoring & Support</div>
-              </div>
-              <div className="first:pl-0 pl-4 sm:pl-6">
-                <div className="text-2xl sm:text-3xl font-black font-display text-fg">100%</div>
-                <div className="text-[10px] text-fg-muted mt-1.5 leading-snug tracking-wider uppercase font-bold">Security-First</div>
-              </div>
-            </motion.div>
-
-            {/* Trust Badges */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-3"
-            >
-              {trustBadges.map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-2 text-xs font-semibold text-fg-2 px-3.5 py-2 rounded-full bg-surface/50 border border-line">
-                  <Icon className="w-3.5 h-3.5 text-accent flex-shrink-0" />
-                  <span>{text}</span>
-                </div>
+              {TRUST_POINTS.map((point) => (
+                <li key={point} className="flex items-center gap-2.5 text-sm font-medium text-fg-2">
+                  <BsCheckCircleFill className="w-4 h-4 text-accent flex-shrink-0" />
+                  {point}
+                </li>
               ))}
-            </motion.div>
-          </div>
-
-          {/* Right: Security illustration */}
-          <div className="lg:col-span-5 hidden md:flex items-center justify-center relative min-h-[400px] w-full max-w-[480px] mx-auto lg:max-w-none">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
-            >
-              <HeroIllustration />
-            </motion.div>
-
-            {/* Floating stat card — bottom-left */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7, ease: [0.23, 1, 0.32, 1] }}
-              className="glass-card absolute bottom-6 left-0 xl:-left-4 rounded-2xl p-4 pr-5 flex items-center gap-3 z-20 shadow-elevated"
-            >
-              <div className="icon-tile w-14 h-12 rounded-xl">
-                <span className="text-accent text-sm font-black">99.9%</span>
-              </div>
-              <div>
-                <div className="text-fg text-sm font-bold">Uptime SLA</div>
-                <div className="text-fg-muted text-xs uppercase tracking-wider">Guaranteed</div>
-              </div>
-            </motion.div>
-
-            {/* Floating stat card — top-right */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9, ease: [0.23, 1, 0.32, 1] }}
-              className="glass-card absolute top-6 right-0 xl:-right-2 rounded-2xl p-4 pr-5 flex items-center gap-3 z-20 shadow-elevated"
-            >
-              <div className="icon-tile w-14 h-12 rounded-xl">
-                <span className="text-accent text-sm font-black">500+</span>
-              </div>
-              <div>
-                <div className="text-fg text-sm font-bold">Clients Secured</div>
-                <div className="text-fg-muted text-xs uppercase tracking-wider">Worldwide</div>
-              </div>
-            </motion.div>
+            </motion.ul>
           </div>
         </div>
-      </div>
       </div>
 
       {/* ── Industries served ── */}

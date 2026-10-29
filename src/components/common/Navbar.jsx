@@ -55,7 +55,7 @@ export default function Navbar() {
                   id="nav-contact-btn"
                   className="btn-primary px-5 py-2.5 text-sm ml-2"
                 >
-                  Get a Free Assessment
+                  Get in Touch
                   <BsArrowRight className="w-3.5 h-3.5" />
                 </Link>
               ) : (
@@ -63,7 +63,7 @@ export default function Navbar() {
                   key={link.path}
                   to={link.path}
                   id={`nav-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
-                  className={`nav-link ${location.hash && link.path.endsWith(location.hash) ? 'is-active' : ''}`}
+                  className={`nav-link py-2 ${location.hash && link.path.endsWith(location.hash) ? 'is-active' : ''}`}
                 >
                   {link.label}
                 </Link>
@@ -111,7 +111,7 @@ export default function Navbar() {
                         onClick={() => setIsOpen(false)}
                         className="btn-primary text-center py-4 text-base rounded-2xl"
                       >
-                        Get a Free Assessment
+                        Get in Touch
                       </Link>
                       <div className="text-center text-fg-dim text-sm space-y-1">
                         <p>📧 info@veltrixsecure.com</p>

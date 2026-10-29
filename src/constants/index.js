@@ -27,14 +27,51 @@ import {
 // ─── NAVIGATION ────────────────────────────────────────────────────────────────
 export const NAV_LINKS = [
   { label: 'Home', path: '/#home' },
+  { label: 'About', path: '/#about' },
   { label: 'Services', path: '/#services' },
+  { label: 'Process', path: '/#process' },
   { label: 'Why Us', path: '/#why' },
   { label: 'Industries', path: '/#industries' },
-  { label: 'About', path: '/#about' },
   { label: 'Contact Us', path: '/#contact' },
 ];
 
 export const SERVICES = [
+  {
+    id: 'web-development',
+    title: 'Web Development',
+    shortDesc: 'Modern, responsive, and user-friendly websites with clean design, fast performance, and seamless functionality across every device.',
+    longDesc: 'We build modern, responsive, and user-friendly websites that help businesses establish a strong online presence. Our focus is on clean design, performance, and seamless functionality across all devices.',
+    icon: BsWindowStack,
+    image: null,
+    features: ['Responsive Design', 'Performance Optimization', 'Clean UI/UX', 'Cross-Device Compatibility'],
+  },
+  {
+    id: 'application-development',
+    title: 'Application Development',
+    shortDesc: 'Custom web applications and business solutions that streamline workflows, improve productivity, and fit your exact requirements.',
+    longDesc: 'We develop customized web applications and business solutions that streamline workflows, improve productivity, and meet specific business requirements.',
+    icon: BsCodeSlash,
+    image: null,
+    features: ['Custom Web Apps', 'Business Solutions', 'Workflow Automation', 'Productivity Tools'],
+  },
+  {
+    id: 'technical-support',
+    title: 'Technical Support & Maintenance',
+    shortDesc: 'Reliable technical support, troubleshooting, bug fixing, and ongoing maintenance to keep your websites and applications running smoothly.',
+    longDesc: 'We provide reliable technical support, troubleshooting, bug fixing, and ongoing maintenance to keep your websites and applications running smoothly.',
+    icon: BsTools,
+    image: null,
+    features: ['Troubleshooting', 'Bug Fixing', 'Ongoing Maintenance', 'Technical Support'],
+  },
+  {
+    id: 'mysql-database-support',
+    title: 'MySQL Database Support',
+    shortDesc: 'MySQL setup, query optimization, error troubleshooting, backup assistance, and performance tuning for reliable data management.',
+    longDesc: 'We provide MySQL database setup, query optimization, error troubleshooting, backup assistance, and performance improvement for reliable data management.',
+    icon: BsDatabaseGear,
+    image: null,
+    features: ['Database Setup', 'Query Optimization', 'Error Troubleshooting', 'Backup Assistance', 'Performance Tuning'],
+  },
   {
     id: 'cybersecurity',
     title: 'Cybersecurity Solutions',
@@ -92,42 +129,6 @@ export const SERVICES = [
     features: ['Network Architecture', 'SD-WAN & VPNs', 'Wireless Security', 'Switching & Routing', 'Bandwidth Management'],
   },
   // Services below have no /services/<id>.png artwork, so image is null
-  {
-    id: 'web-development',
-    title: 'Web Development',
-    shortDesc: 'Modern, responsive, and user-friendly websites with clean design, fast performance, and seamless functionality across every device.',
-    longDesc: 'We build modern, responsive, and user-friendly websites that help businesses establish a strong online presence. Our focus is on clean design, performance, and seamless functionality across all devices.',
-    icon: BsWindowStack,
-    image: null,
-    features: ['Responsive Design', 'Performance Optimization', 'Clean UI/UX', 'Cross-Device Compatibility'],
-  },
-  {
-    id: 'technical-support',
-    title: 'Technical Support & Maintenance',
-    shortDesc: 'Reliable technical support, troubleshooting, bug fixing, and ongoing maintenance to keep your websites and applications running smoothly.',
-    longDesc: 'We provide reliable technical support, troubleshooting, bug fixing, and ongoing maintenance to keep your websites and applications running smoothly.',
-    icon: BsTools,
-    image: null,
-    features: ['Troubleshooting', 'Bug Fixing', 'Ongoing Maintenance', 'Technical Support'],
-  },
-  {
-    id: 'application-development',
-    title: 'Application Development',
-    shortDesc: 'Custom web applications and business solutions that streamline workflows, improve productivity, and fit your exact requirements.',
-    longDesc: 'We develop customized web applications and business solutions that streamline workflows, improve productivity, and meet specific business requirements.',
-    icon: BsCodeSlash,
-    image: null,
-    features: ['Custom Web Apps', 'Business Solutions', 'Workflow Automation', 'Productivity Tools'],
-  },
-  {
-    id: 'mysql-database-support',
-    title: 'MySQL Database Support',
-    shortDesc: 'MySQL setup, query optimization, error troubleshooting, backup assistance, and performance tuning for reliable data management.',
-    longDesc: 'We provide MySQL database setup, query optimization, error troubleshooting, backup assistance, and performance improvement for reliable data management.',
-    icon: BsDatabaseGear,
-    image: null,
-    features: ['Database Setup', 'Query Optimization', 'Error Troubleshooting', 'Backup Assistance', 'Performance Tuning'],
-  },
 ];
 
 // ─── STATS ────────────────────────────────────────────────────────────────────
@@ -328,7 +329,7 @@ export const FAQS = [
   {
     question: 'Where is VeltrixSecure Technologies located?',
     answer:
-      'Our registered office is at W-159, Ground Floor, Sector 12, Gautam Buddha Nagar, Noida, Uttar Pradesh, India – 201301. We operate remotely and on-site across India and serve international clients globally.',
+      'Our registered office is at D-9, Sector 3, Noida, Gautam Buddha Nagar, Uttar Pradesh, India – 201301. We operate remotely and on-site across India and serve international clients globally.',
   },
   {
     question: 'Do you offer 24/7 cybersecurity monitoring and support?',
@@ -441,21 +442,17 @@ export const OFFICE_LOCATIONS = [
     city: 'Noida',
     country: 'India',
     role: 'Headquarters & Delivery Centre',
-    address: 'W-159, Ground Floor, Sector 12, Gautam Buddha Nagar, Noida, Uttar Pradesh – 201301',
-    phone: '+91 120 000 0000',
+    address: 'D-9, Sector 3, Noida, Gautam Buddha Nagar, Uttar Pradesh – 201301',
+    phone: '+91 88514 60840',
     email: 'info@veltrixsecure.com',
     hours: '24/7 SOC Operations | Mon–Sat: 9:00 AM – 7:00 PM IST',
-    mapUrl:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.7!2d77.3167!3d28.5706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce4c7ddddddd%3A0xabcdef!2sSector%2012%2C%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1653245000000!5m2!1sen!2sin',
+    mapUrl: 'https://maps.google.com/maps?q=D-9%2C%20Sector%203%2C%20Noida%2C%20Uttar%20Pradesh%20201301&z=15&output=embed',
   },
 ];
 
 // ─── SOCIAL LINKS ─────────────────────────────────────────────────────────────
 export const SOCIAL_LINKS = {
-  linkedin: 'https://www.linkedin.com/company/veltrix-secure/',
-  twitter: 'https://twitter.com/veltrixsecure',
-  github: 'https://github.com/veltrixsecure',
-  facebook: 'https://facebook.com/veltrixsecure',
+  linkedin: 'https://www.linkedin.com/in/veltrix-secure/',
 };
 
 // ─── CONTACT INFO ─────────────────────────────────────────────────────────────
@@ -471,8 +468,8 @@ export const SITE = {
 
 export const CONTACT_INFO = {
   email: 'info@veltrixsecure.com',
-  phone: '+91 120 000 0000',
-  address: 'W-159, Ground Floor, Sector 12, Gautam Buddha Nagar, Noida, Uttar Pradesh – 201301',
+  phone: '+91 88514 60840',
+  address: 'D-9, Sector 3, Noida, Gautam Buddha Nagar, Uttar Pradesh – 201301',
   city: 'Noida',
   state: 'Uttar Pradesh',
   country: 'India',

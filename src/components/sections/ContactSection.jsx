@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
@@ -7,6 +8,8 @@ import {
   BsTelephoneFill,
   BsShieldCheck,
   BsArrowRight,
+  BsCheckCircleFill,
+  BsExclamationCircleFill,
 } from 'react-icons/bs';
 import { CONTACT_INFO, OFFICE_LOCATIONS } from '../../constants';
 import { apiService } from '../../services/api';
@@ -27,14 +30,20 @@ export default function ContactSection() {
     reset,
     formState: { errors, isSubmitting },
   } = useForm();
+  // Inline result shown under the button (the toast can be missed on mobile)
+  const [status, setStatus] = useState(null);
 
   const onSubmit = async (data) => {
+    setStatus(null);
     try {
       const response = await apiService.submitContactForm(data);
-      toast.success(response.message || 'Thank you! We will be in touch shortly.');
+      const message = response.message || 'Thank you! We will be in touch shortly.';
+      toast.success(message);
+      setStatus({ type: 'success', message });
       reset();
     } catch (err) {
       toast.error(err.message);
+      setStatus({ type: 'error', message: err.message });
     }
   };
 
@@ -59,13 +68,13 @@ export default function ContactSection() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_100%_at_50%_0%,rgb(var(--accent)/0.14),transparent)] pointer-events-none" />
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-fg font-display mb-6 relative">
-            Ready to Secure Your Business?
+            Let&apos;s Build Something Great
           </h2>
           <p className="text-fg-muted text-base md:text-lg max-w-2xl mx-auto mb-8 font-light relative leading-relaxed">
             Contact VeltrixSecure today for a FREE IT Security Assessment and discover how we can transform your technology into your greatest competitive advantage.
           </p>
           <a href="#contact-form" className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-4 relative">
-            Claim Your Free Assessment
+            Contact Us
             <BsArrowRight className="w-4 h-4" />
           </a>
         </motion.div>
@@ -82,7 +91,6 @@ export default function ContactSection() {
                 transition={{ duration: 0.6 }}
                 className="section-label mb-4"
               >
-                <span className="w-8 h-[1px] bg-accent block" />
                 Get In Touch
               </motion.div>
               <h3 className="text-2xl md:text-3xl font-black text-fg font-display mb-4">
@@ -111,7 +119,7 @@ export default function ContactSection() {
 
             <div className="flex flex-col gap-4">
               {/* Email */}
-              <a href={`mailto:${CONTACT_INFO.email}`} className="group flex items-start gap-4 p-5 rounded-2xl border border-line bg-surface shadow-card transition-all hover:border-accent/50 hover:shadow-card-hover duration-300">
+              <a href={`mailto:${CONTACT_INFO.email}`} data-card className="group flex items-start gap-4 p-5 rounded-2xl border border-line bg-surface shadow-card transition-all hover:border-accent/50 hover:shadow-card-hover duration-300">
                 <div className="icon-tile w-10 h-10 rounded-xl">
                   <BsEnvelopeFill className="w-4 h-4 text-accent" />
                 </div>
@@ -122,7 +130,7 @@ export default function ContactSection() {
               </a>
 
               {/* Phone */}
-              <a href={`tel:${CONTACT_INFO.phone}`} className="group flex items-start gap-4 p-5 rounded-2xl border border-line bg-surface shadow-card transition-all hover:border-accent/50 hover:shadow-card-hover duration-300">
+              <a href={`tel:${CONTACT_INFO.phone}`} data-card className="group flex items-start gap-4 p-5 rounded-2xl border border-line bg-surface shadow-card transition-all hover:border-accent/50 hover:shadow-card-hover duration-300">
                 <div className="icon-tile w-10 h-10 rounded-xl">
                   <BsTelephoneFill className="w-4 h-4 text-accent" />
                 </div>
@@ -133,7 +141,7 @@ export default function ContactSection() {
               </a>
 
               {/* Location */}
-              <div className="flex items-start gap-4 p-5 rounded-2xl border border-line bg-surface shadow-card">
+              <div data-card className="group flex items-start gap-4 p-5 rounded-2xl border border-line bg-surface shadow-card transition-all hover:border-accent/50 hover:shadow-card-hover duration-300">
                 <div className="icon-tile w-10 h-10 rounded-xl">
                   <BsGeoAltFill className="w-4 h-4 text-accent" />
                 </div>
@@ -268,6 +276,23 @@ export default function ContactSection() {
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                   {!isSubmitting && <BsArrowRight className="w-4 h-4" />}
                 </button>
+
+                <div role="status" aria-live="polite">
+                  {status && (
+                    <p
+                      className={`flex items-start gap-2.5 rounded-xl border px-4 py-3 text-sm ${
+                        status.type === 'success'
+                          ? 'border-success/30 bg-success/10 text-success'
+                          : 'border-danger/30 bg-danger/10 text-danger'
+                      }`}
+                    >
+                      {status.type === 'success'
+                        ? <BsCheckCircleFill className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                        : <BsExclamationCircleFill className="w-4 h-4 flex-shrink-0 mt-0.5" />}
+                      {status.message}
+                    </p>
+                  )}
+                </div>
 
                 <p className="text-xs text-fg-dim flex items-start gap-2 leading-relaxed">
                   <BsShieldCheck className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-0.5" />
