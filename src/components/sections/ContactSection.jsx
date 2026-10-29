@@ -50,7 +50,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="theme-dark relative rounded-3xl p-12 md:p-16 text-center overflow-hidden mb-12 border border-line shadow-float"
+          className="theme-dark relative rounded-3xl px-6 py-10 sm:p-12 md:p-16 text-center overflow-hidden mb-12 border border-line shadow-float"
           style={{
             background: 'linear-gradient(120deg, rgb(var(--bg)), rgb(var(--surface-2)))',
           }}

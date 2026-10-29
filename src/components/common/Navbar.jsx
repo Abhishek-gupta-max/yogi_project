@@ -29,7 +29,7 @@ export default function Navbar() {
     <header
       className={`theme-dark fixed top-0 left-0 w-full z-50 border-b transition-all duration-500 ease-smooth ${
         scrolled
-          ? 'bg-page/90 backdrop-blur-xl border-line shadow-float'
+          ? 'bg-surface/95 backdrop-blur-xl border-line shadow-float'
           : 'bg-transparent border-transparent'
       }`}
     >

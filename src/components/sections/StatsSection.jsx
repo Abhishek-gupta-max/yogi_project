@@ -1,13 +1,18 @@
 import { useEffect, useRef } from 'react';
-import { motion, useInView, animate } from 'framer-motion';
+import { motion, useInView, useReducedMotion, animate } from 'framer-motion';
 
 // ── 1. Animated Counters ───────────────────────────────────────────────────
 
 function Counter({ value, suffix = "", decimals = 0 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    if (reduceMotion && ref.current) {
+      ref.current.textContent = value.toFixed(decimals) + suffix;
+      return;
+    }
     if (isInView) {
       const controls = animate(0, value, {
         duration: 2.5,
@@ -20,7 +25,7 @@ function Counter({ value, suffix = "", decimals = 0 }) {
       });
       return () => controls.stop();
     }
-  }, [value, isInView, suffix, decimals]);
+  }, [value, isInView, suffix, decimals, reduceMotion]);
 
   return <span ref={ref}>0{suffix}</span>;
 }

@@ -19,7 +19,7 @@ function ServiceCard({ service, index }) {
         {/* Card Background Image (skipped when a service sets image: null) */}
         {service.image !== null && (
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-[0.08] group-hover:opacity-[0.16] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.05] pointer-events-none z-0"
+            className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-[0.08] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.05] pointer-events-none z-0"
             style={{
               backgroundImage: `url("${service.image ?? `/services/${service.id}.png`}")`,
             }}
